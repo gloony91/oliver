@@ -63,6 +63,27 @@ main_directory/
   |----- README.md
 ```
 
+and then, if you want to see
+all of the directories that
+you're tracking, you can run
+`oliver list`.
+
+you're probably thinking:
+*"can't I just run `ls` inside the directory
+and it'll do the same thing?"*, **and the
+answer to your question is _yes_**.
+
+I have no idea what I'm doing.
+
+the thing that differentiates oliver with
+typical things (no examples..) is that
+it gives you access to the directory from
+anywhere.. which you could easily do with a public
+shell variable.
+
+> I have no idea what I'm doing.
+
+
 things I'm thinking so far
 --------------------------
 
