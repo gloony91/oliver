@@ -1,32 +1,20 @@
-require_relative "oliver/version"
+# holy shit, this is massive
+# twss
 require 'launchy'
 require 'jibry'
+require 'rainbow'
+require_relative "oliver/version"
+require_relative "oliver/methods"
+require_relative "oliver/oliver_file_name"
 
-olivefile = 'Olivefile'
+# if the user doesn't want to use rainbow
+# just disable it completely
+Rainbow.enabled = false if ARGV[-1] == 'colour=off'
 
-if ARGV[0].nil?
-  puts 'dude, you need to specify some arguments.'
-  exit
-end
-
-def help
-  puts "it's 12:29 AM and I hate code."
-end
-
-def oliver_main
-  contents = File.read(olivefile).chomp
-  puts contents
-end
-
-if File.file?(olivefile)
+# if `Name::OLIVER` (string)
+# exists as a file continue with oliver
+if File.file?(Name::OLIVER)
   oliver_main
-else
-  case ARGV[0].downcase
-  when '-v' || '--version'
-    puts "oliver v#{Oliver::VERSION}"
-  when '-h' || '--help'
-   help
-  else
-    help
-  end
+else # or else just probably get some help to the user
+  other_things
 end
