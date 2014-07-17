@@ -2,7 +2,7 @@ oliver
 ======
 
 oliver manages your local GitHub
-repositories for you with a simple oliverFile.
+repositories for you with a simple `Olivefile`.
 
 installation
 ------------
