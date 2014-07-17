@@ -9,7 +9,7 @@ Gem::Specification.new do |gem|
   gem.homepage      = 'https://github.com/trommel/oliver'
 
   gem.files         = `git ls-files`.split($\)
-  gem.executables   = ['oliver']
+  gem.executables   = ['olive']
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.name          = 'oliver'
   gem.require_paths = ['oliver']
@@ -19,5 +19,5 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency "rake"
   gem.add_dependency 'launchy', '>= 2.4'
   gem.add_dependency 'jibry', '>= 0.0.1'
-  gem.add_dependency 'thor', '>= 0.19.0'
+  gem.add_dependency 'rainbow', '>= 2.0.0'
 end
