@@ -9,7 +9,7 @@ Gem::Specification.new do |gem|
   gem.homepage      = 'https://github.com/trommel/oliver'
 
   gem.files         = `git ls-files`.split($\)
-  gem.executables   = ['oliver']
+  gem.executables   = ['olive']
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.name          = 'oliver'
   gem.require_paths = ['oliver']

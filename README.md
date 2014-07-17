@@ -49,18 +49,21 @@ main_directory/
   |----- bin/
   |----- lib/
   |----- README.md
+  |----- .git/
   |
   |- git_project_2/
   |----- src/
   |----- bin/
   |----- lib/
   |----- README.md
+  |----- .git/
   |
   |- git_project_3/
   |----- src/
   |----- bin/
   |----- lib/
   |----- README.md
+  |----- .git/
 ```
 
 and then, if you want to see
