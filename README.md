@@ -134,3 +134,15 @@ repo and run `git pull`
 ```bash
 $ oliver update
 ```
+
+testing
+=======
+
+refer to [TESTING.md](https://github.com/trommel/oliver/blob/master/spec/TESTING.md).
+
+l3g4l 0bl1g4t10n$
+=================
+
+is there even a clear idea to steal?
+
+this is my "idea". please don't steal it.
