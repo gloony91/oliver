@@ -3,10 +3,10 @@
 require 'jibry'
 require 'rainbow'
 require 'YAML'
+require_relative "oliver/oliver_file_name"
 require_relative "oliver/arguments"
 require_relative "oliver/version"
 require_relative "oliver/methods"
-require_relative "oliver/oliver_file_name"
 require_relative "oliver/main"
 
 # if the user doesn't want to use rainbow
