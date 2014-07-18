@@ -197,7 +197,8 @@ is that I didn't catch other things I needed to fix, and now I have,
 like, a billion commits, even though most of them are just me changing
 the version variable.
 
-anyways, there's an unstable branch, if you want to check it out.
+anyways, there's an [unstable](https://github.com/trommel/oliver/tree/unstable)
+branch, if you want to check it out.
 the official gem that's hosted on rubygems, though, is
 the gem of the master branch, and that's how it's going to stay.
 
