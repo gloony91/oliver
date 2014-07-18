@@ -130,7 +130,7 @@ and in the `Olivefile`
 repos:
    - "trommel/oliver"
    - "istx25/dotfiles"
-   
+
 # use 3 spaces for indentation, not tabs!
 # I spent, like, an hour trying to fix a nonexistant bug becuase of this
 # smh so hard
@@ -185,6 +185,22 @@ it's pretty cool, but if you don't like it, just
 append `colour=off` to any statement
 
 don't forget to spell *"colour"* **the proper way**.
+
+branches
+========
+
+I kept fixing bugs and then I would frantically
+push the fixes because I was worried people, if anyone actually
+uses oliver, would experience problems with it if I didn't push
+the fix immediately. the problem, obviously, with this
+is that I didn't catch other things I needed to fix, and now I have,
+like, a billion commits, even though most of them are just me changing
+the version variable.
+
+anyways, there's an [unstable](https://github.com/trommel/oliver/tree/unstable)
+branch, if you want to check it out.
+the official gem that's hosted on rubygems, though, is
+the gem of the master branch, and that's how it's going to stay.
 
 testing
 =======
