@@ -13,8 +13,11 @@ Rainbow.enabled = false if ARGV[-1] == 'colour=off'
 
 # if `Name::OLIVER` (string)
 # exists as a file continue with oliver
-if File.file?(Name::OLIVER)
-  oliver_main
-else # or else just probably get some help to the user
-  other_things
+case File.file?
+  when Name::OLIVER.downcase
+    puts Rainbow('Use "Olivefile"')
+  when Name::OLIVER
+    oliver_main
+  else
+    other_things
 end

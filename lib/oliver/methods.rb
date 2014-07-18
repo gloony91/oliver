@@ -1,3 +1,5 @@
+require_relative "main"
+
 # Help the user with their heavy troubles
 def help
 
@@ -62,6 +64,5 @@ end
 # I'll probably move this into a
 # seperate file in the future
 def oliver_main
-  contents = File.read(Name::OLIVER).chomp
-  puts contents
+  run_main
 end
