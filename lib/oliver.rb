@@ -13,13 +13,22 @@ require_relative "oliver/main"
 # just disable it completely
 Rainbow.enabled = false if ARGV[-1] == 'colour=off'
 
+if ARGV[0].nil?
+  help
+  Jib.exit
+end
+
 # (Literally) different arguments
 different_arguments
 
 # if `Name::OLIVER` (string)
 # exists as a file continue with oliver
 if File.file? Name::OLIVER
-  run_main
+  if ARGV[0].downcase == 'install'
+    run_main
+  else
+    help
+  end
 else
   other_things
 end

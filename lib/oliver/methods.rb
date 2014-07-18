@@ -14,23 +14,33 @@ def help
 
   helper = [
     [
+      "install",
+      "clones / removes directories if they're listed on the #{Name::OLIVER}"
+    ],
+
+    [
+      "init",
+      "initializes the main directory by creating a base #{Name::OLIVER}"
+    ],
+
+    [
       "add username/repo",
-      "clone repo and add it to tracking list",
+      "clone repo and add it to the #{Name::OLIVER}",
     ],
 
     [
       "remove username/repo",
-      "delete repo and remove it from tracking list",
+      "delete repo and remove it from the #{Name::OLIVER}",
     ],
 
     [
       "list",
-      "list repos currently on tracking list"
+      "list repos currently on the #{Name::OLIVER}"
     ],
 
     [
       "update",
-      "pull updates from each tracked repo"
+      "pull updates from each tracked repo on the #{Name::OLIVER}"
     ]
   ]
 
