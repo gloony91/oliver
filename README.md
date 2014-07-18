@@ -105,6 +105,36 @@ the `olive` command will be what you use
 when working with oliver, similar to how
 bundler uses the `bundle` command.
 
+before you do anything, you'll probably
+want to initialize the entire directory
+that you're keeping these git
+repositories in (in the example
+  above, "main_directory/" would
+  be the directory)
+do to this, you're going to want
+to make a `OliveFile` and write a bit
+in it
+
+```bash
+$ cd main_directory/
+$ touch Olivefile
+$ vim Olivefile
+```
+
+and in the `Olivefile`
+
+```vim
+repos:
+  - "trommel/oliver"
+  - "istx25/dotfiles"
+```
+
+you can then run
+
+```bash
+$ olive
+```
+
 ### start tracking a repo
 
 this will add it to the tracking list
