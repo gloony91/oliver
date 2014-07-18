@@ -1,4 +1,13 @@
-require_relative "main"
+# If the user can't even
+# specify basic arguments
+# just give him/her some help
+# and heavy medication
+def are_you_serious?
+  if ARGV[0].nil?
+    help
+    Jib.exit
+  end
+end
 
 # Help the user with their heavy troubles
 def help
@@ -41,7 +50,8 @@ end
 # a question like "what version is oliver?"
 # or "I need some help"
 def other_things
-  case ARGV[0].downcase
+  are_you_serious?
+  case ARGV[0].to_s.downcase
   when '-v' || '--version'
     puts "#{Rainbow('oliver').red} #{Rainbow("v#{Oliver::VERSION}").green}"
   when '-h' || '--help'
@@ -49,20 +59,4 @@ def other_things
   else
     help
   end
-end
-
-# If the user can't even
-# specify basic arguments
-# just give him/her some help
-# and heavy medication
-if ARGV[0].nil?
-  help
-  Jib.exit
-end
-
-# the main oliver "project" thing
-# I'll probably move this into a
-# seperate file in the future
-def oliver_main
-  run_main
 end
