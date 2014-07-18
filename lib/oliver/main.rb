@@ -2,8 +2,8 @@
 def run_main
 
   # Back up your files, man
-  if ! File.directory?('backup')
-    Dir.mkdir 'backup'
+  if ! File.directory?('.backup')
+    Dir.mkdir '.backup'
   end
 
   # The buggiest code in the world (that's probably totally untrue)
