@@ -1,6 +1,5 @@
 # holy shit, this is massive
 # twss
-require 'launchy'
 require 'jibry'
 require 'rainbow'
 require 'YAML'
