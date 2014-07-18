@@ -13,9 +13,11 @@ require_relative "oliver/main"
 # just disable it completely
 Rainbow.enabled = false if ARGV[-1] == 'colour=off'
 
-if ARGV[0].downcase == 'init'
-  puts "I'll implement this later"
-  Jib.exit
+if ! ARGV[0].nil?
+  if ARGV[0].downcase == 'init'
+    puts "I'll implement this later"
+    Jib.exit
+  end
 end
 
 # if `Name::OLIVER` (string)
