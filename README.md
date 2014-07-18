@@ -11,7 +11,7 @@ installation
 ------------
 
 oliver is a CLI that you can install
-through [RubyGems](https://rubygems.org)
+through [RubyGems](https://rubygems.org/gems/oliver)
 
 ```bash
 $ gem install oliver
