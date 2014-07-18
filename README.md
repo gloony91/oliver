@@ -219,6 +219,10 @@ that have been installed locally but are no longer on the list.
 this way, if you want to delete a bunch of repositories, you can simply
 remove them from the list and run
 
+I'll also probably make the `backup` directory hidden (`.backup`)
+so that if a user clones a repo called "backup", nothing will interfere.
+things will also be cleaner, to boot.
+
 ```bash
 $ olive install
 ```
