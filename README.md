@@ -202,8 +202,6 @@ branch, if you want to check it out.
 the official gem that's hosted on rubygems, though, is
 the gem of the master branch, and that's how it's going to stay.
 
-
-
 testing
 =======
 
