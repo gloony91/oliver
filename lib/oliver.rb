@@ -15,7 +15,7 @@ Rainbow.enabled = false if ARGV[-1] == 'colour=off'
 # exists as a file continue with oliver
 case File.file?
   when Name::OLIVER.downcase
-    puts Rainbow('Use "Olivefile"')
+    puts "Use \"#{Rainbow('Olivefile').red}\""
   when Name::OLIVER
     oliver_main
   else
