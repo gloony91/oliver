@@ -202,6 +202,32 @@ branch, if you want to check it out.
 the official gem that's hosted on rubygems, though, is
 the gem of the master branch, and that's how it's going to stay.
 
+things to implement
+===================
+
+[Douglas](https://twitter.com/istx25) gave me this cool
+idea that [CocoaPods](https://github.com/CocoaPods/CocoaPods) uses, where
+when we run
+
+```bash
+$ olive install
+```
+
+it can not only install the repos on the list, but remove the repos
+that have been installed locally but are no longer on the list.
+
+this way, if you want to delete a bunch of repositories, you can simply
+remove them from the list and run
+
+```bash
+$ olive install
+```
+
+I spent, like, 50 minutes on this and I can't figure out a good way
+to do it, though, so.. yeah
+
+I'll add it as soon as I can figure it out.
+
 testing
 =======
 
