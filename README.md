@@ -128,8 +128,12 @@ and in the `Olivefile`
 
 ```vim
 repos:
-  - "trommel/oliver"
-  - "istx25/dotfiles"
+   - "trommel/oliver"
+   - "istx25/dotfiles"
+   
+# use 3 spaces for indentation, not tabs!
+# I spent, like, an hour trying to fix a nonexistant bug becuase of this
+# smh so hard
 ```
 
 you can then run
