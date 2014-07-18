@@ -159,7 +159,7 @@ contribution
 ============
 
 refer to
-[CONTRIBUTING.md](https://github.com/trommel/oliver/blob/master/spec/CONTRIBUTING.md)
+[CONTRIBUTING.md](https://github.com/trommel/oliver/blob/master/spec/CONTRIBUTING.md).
 
 
 l3g4l 0bl1g4t10n$
