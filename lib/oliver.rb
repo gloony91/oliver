@@ -4,7 +4,6 @@ require 'launchy'
 require 'jibry'
 require 'rainbow'
 require 'YAML'
-require 'git'
 require_relative "oliver/version"
 require_relative "oliver/methods"
 require_relative "oliver/oliver_file_name"
