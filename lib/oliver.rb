@@ -16,7 +16,7 @@ Rainbow.enabled = false if ARGV[-1] == 'colour=off'
 if ARGV[0].downcase == 'init'
   puts "I'll implement this later"
   Jib.exit
-else
+end
 
 # if `Name::OLIVER` (string)
 # exists as a file continue with oliver
