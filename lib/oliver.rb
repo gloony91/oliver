@@ -26,9 +26,14 @@ different_arguments
 if File.file? Name::OLIVER
   if ARGV[0].downcase == 'install'
     run_main
+    Jib.exit
   else
+    # name_install = Rainbow('oliver install')
+    # puts "#{name_install} requires an #{Name::OLIVER} to do its magic."
     help
+    Jib.exit
   end
 else
   other_things
+  Jib.exit
 end
