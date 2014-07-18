@@ -4,6 +4,9 @@ oliver
 oliver manages your local GitHub
 repositories for you with a simple `Olivefile`.
 
+"like podfiles, but for git repositories"
+-- [@istx25](https://github.com/istx25)
+
 installation
 ------------
 
