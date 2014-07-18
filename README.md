@@ -1,6 +1,8 @@
 oliver
 ======
 
+[![Gem Version](https://badge.fury.io/rb/oliver.svg)](http://badge.fury.io/rb/oliver)
+
 oliver manages your local GitHub
 repositories for you with a simple `Olivefile`.
 
