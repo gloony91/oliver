@@ -24,7 +24,11 @@ def run_main
     # Clone the repo if it doesn't already exist
     if !File.directory?(repo)
       %x(git clone git://github.com/#{url} --quiet)
-      puts "#{Rainbow(repo).green}/ has been successfully cloned."
+      if File.directory?(repo)
+        puts "#{Rainbow(repo).green}/ has been successfully cloned."
+      else
+        puts "There was an error cloning #{Rainbow(repo).red}/."
+      end
     else
       puts "#{Rainbow(repo).red}/ already exists."
     end
