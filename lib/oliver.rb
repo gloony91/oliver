@@ -21,6 +21,9 @@ end
 # (Literally) different arguments
 different_arguments
 
+# (Literally) other things
+other_things
+
 # if `Name::OLIVER` (string)
 # exists as a file continue with oliver
 if File.file? Name::OLIVER
@@ -28,12 +31,12 @@ if File.file? Name::OLIVER
     run_main
     Jib.exit
   else
-    # name_install = Rainbow('oliver install')
-    # puts "#{name_install} requires an #{Name::OLIVER} to do its magic."
-    help
+    name_install = Rainbow('oliver install').red
+    name_color = Rainbow(Name::OLIVER).red
+    puts "#{name_install} requires an #{name_color} to do its magic."
     Jib.exit
   end
 else
-  other_things
+  help
   Jib.exit
 end
