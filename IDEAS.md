@@ -3,8 +3,7 @@ ideas
 
 ideas that should or have already been implemented.
 
-implement
-=========
+- [x] make the backup directory hidden (`.backup`)
 
 - [ ] add verbose mode (`--verbose`) so things like `olive install` will have output like
 
@@ -47,8 +46,3 @@ I spent, like, 50 minutes on this and I can't figure out a good way
 to do it, though, so.. yeah
 
 I'll add it as soon as I can figure it out.
-
-implemented
-===========
-
-make the backup directory hidden (`.backup`)
