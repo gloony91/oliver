@@ -229,6 +229,20 @@ to do it, though, so.. yeah
 
 I'll add it as soon as I can figure it out.
 
+versions
+========
+
+for some reason, I was using things like "1.5" as oliver's
+version for a bit, even though oliver isn't even finished (to
+  even the help menu), so if you check the previous gem versions,
+the newest gem version is probably (maybe) smaller / below
+previous gem versions. this was me being silly and not thinking.
+
+as of right now (July 18, 2014, 6:19 PM), oliver's version
+is 0.1.5, and it will continue to build off from there.
+
+sorry about doing that silly thing.
+
 testing
 =======
 
