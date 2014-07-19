@@ -7,7 +7,7 @@ implement
 =========
 
 - [ ] add verbose mode (`--verbose`) so things like `olive install` will have output like
-- 
+
 ```bash
 olive/ already exists.
 dotfiles was cloned.
