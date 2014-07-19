@@ -141,7 +141,7 @@ repos:
 you can then run
 
 ```bash
-$ olive
+$ olive install # installs / removes listed repos
 ```
 
 ### start tracking a repo
