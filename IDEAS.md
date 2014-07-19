@@ -15,6 +15,17 @@ dotfiles was cloned.
 
 etc, etc. otherwise, this should be defaulted to silent.
 
+this should also be able to be set through the Olivefile
+
+```bash
+repos:
+   - "trommel/oliver"
+
+prefs:
+   - "verbose"
+   - "no colour" # this too :P
+```
+
 implemented
 ===========
 
