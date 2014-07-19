@@ -1,4 +1,3 @@
-require 'awesome_print'
 # Main oliver file
 def run_main
 
