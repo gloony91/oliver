@@ -188,6 +188,12 @@ append `colour=off` to any statement
 
 don't forget to spell *"colour"* **the proper way**.
 
+things to remember
+==================
+
+- run everything with `olive`, not `oliver`. "oliver" is the name
+of the project, `olive` is the name of the CLI.
+
 branches
 ========
 

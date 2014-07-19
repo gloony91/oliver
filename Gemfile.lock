@@ -1,0 +1,21 @@
+PATH
+  remote: .
+  specs:
+    oliver (0.1.7)
+      jibry (>= 0.0.3)
+      rainbow (>= 2.0.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    jibry (0.0.3)
+    rainbow (2.0.0)
+    rake (10.3.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler (~> 1.6)
+  oliver!
+  rake
