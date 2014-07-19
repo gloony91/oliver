@@ -3,13 +3,13 @@ def help
 
   helper = [
     [
-      "install",
-      "clones / removes directories if they're listed on the #{Name::OLIVER}"
+      "init",
+      "initializes the main directory by creating a base #{Name::OLIVER}"
     ],
 
     [
-      "init",
-      "initializes the main directory by creating a base #{Name::OLIVER}"
+      "install",
+      "clones / removes directories if they're listed on the #{Name::OLIVER}"
     ],
 
     [
@@ -67,7 +67,5 @@ def other_things
     Jib.exit
   when '-h' || '--help'
    help
-  else
-    help
   end
 end

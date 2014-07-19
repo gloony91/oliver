@@ -13,6 +13,9 @@ require_relative "oliver/main"
 # just disable it completely
 Rainbow.enabled = false if ARGV[-1] == 'colour=off'
 
+# Right off the bat,
+# if the user doesn't specify even one argument
+# just give him some help and quit oliver
 if ARGV[0].nil?
   help
   Jib.exit
