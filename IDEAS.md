@@ -6,8 +6,14 @@ ideas that should or have already been implemented.
 implement
 =========
 
-none.. yet
+- [ ] add verbose mode (`--verbose`) so things like `olive install` will have output like
+- 
+```bash
+olive/ already exists.
+dotfiles was cloned.
+```
 
+etc, etc. otherwise, this should be defaulted to silent.
 
 implemented
 ===========
