@@ -7,9 +7,14 @@ def run_main
     Dir.mkdir '.backup'
   end
 
-  # The buggiest code in the world (that's probably totally untrue)
+  # The buggiest code in the world
+  # (that's probably totally untrue)
   body = File.read(Name::OLIVER.chomp)
   final = YAML.load("---\n#{body}\n---")
+  listed_repos = []
+  final["repos"].each do |what|
+    listed_repos.push(what)
+  end
   final["repos"].each do |url|
 
     # Split the url in half
@@ -36,7 +41,7 @@ def run_main
     # If the directory doesn't exist
     # in `Name::OLIVER`, move it to .backup
     current_repos.each do |directory_thing|
-      if !final["repos"].to_s.include? directory_thing
+      if !listed_repos.to_s.include? directory_thing
         %x(mv #{directory_thing} .backup)
       end
     end
