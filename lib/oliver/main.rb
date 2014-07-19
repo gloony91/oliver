@@ -2,7 +2,7 @@
 def run_main
 
   # Back up your files, man
-  if ! File.directory?('.backup')
+  if !File.directory?('.backup')
     Dir.mkdir '.backup'
   end
 
@@ -16,7 +16,8 @@ def run_main
     username = splitted[0]
     repo = splitted[1]
 
-    if ! File.directory?(repo)
+    # Clone the repo if it doesn't already exist
+    if !File.directory?(repo)
       %x(git clone git://github.com/#{url} --quiet)
     else
       puts "#{Rainbow(repo).red}/ already exists."
