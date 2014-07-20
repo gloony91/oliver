@@ -17,6 +17,5 @@ Gem::Specification.new do |gem|
 
   gem.add_development_dependency "bundler", "~> 1.6"
   gem.add_development_dependency "rake"
-  gem.add_dependency 'jibry', '>= 0.0.3'
   gem.add_dependency 'rainbow', '>= 2.0.0'
 end

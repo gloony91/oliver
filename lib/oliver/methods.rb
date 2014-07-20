@@ -64,7 +64,7 @@ def other_things
   case ARGV[0].downcase
   when '-v' || '--version'
     puts "#{Rainbow('oliver').red} #{Rainbow("v#{Oliver::VERSION}").green}"
-    Jib.exit
+    exit
   when '-h' || '--help'
    help
   end
