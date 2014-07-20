@@ -1,6 +1,5 @@
 # holy shit, this is massive
 # twss
-require 'jibry'
 require 'rainbow'
 require 'YAML'
 require_relative "oliver/oliver_file_name"
@@ -11,14 +10,19 @@ require_relative "oliver/main"
 
 # if the user doesn't want to use rainbow
 # just disable it completely
-Rainbow.enabled = false if ARGV[-1] == 'colour=off'
+Rainbow.enabled = false if ARGV[-1].downcase == 'colour=off'
+if ARGV[-1].downcase == 'color=off'
+  color = "\"color\""
+  puts "Don't you know how to spell #{Rainbow(color).red}?"
+  exit
+end
 
 # Right off the bat,
 # if the user doesn't specify even one argument
 # just give him some help and quit oliver
 if ARGV[0].nil?
   help
-  Jib.exit
+  exit
 end
 
 # (Literally) different arguments
@@ -32,14 +36,14 @@ other_things
 if File.file? Name::OLIVER
   if ARGV[0].downcase == 'install'
     run_main
-    Jib.exit
+    exit
   else
     name_install = Rainbow('oliver install').red
     name_color = Rainbow(Name::OLIVER).red
     puts "#{name_install} requires an #{name_color} to do its magic."
-    Jib.exit
+    exit
   end
 else
   help
-  Jib.exit
+  exit
 end

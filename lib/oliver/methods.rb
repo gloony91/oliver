@@ -53,7 +53,7 @@ def help
     puts "#{Rainbow(line).green} # => #{Rainbow(blurb).blue}"
   end
 
-  Jib.exit
+  exit
 
 end
 

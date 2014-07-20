@@ -13,7 +13,6 @@ def different_arguments
     else
       puts "#{Rainbow(Name::OLIVER).red} already exists."
     end
-
-    Jib.exit
+    exit
   end
 end
