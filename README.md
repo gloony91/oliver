@@ -103,58 +103,48 @@ view repos on the list and update the repo (essentially
 docs
 ----
 
-the `olive` command will be what you use
-when working with oliver, similar to how
-bundler uses the `bundle` command.
+### setup the repo
 
-before you do anything, you'll probably
-want to initialize the entire directory
-that you're keeping these git
-repositories in (in the example
-  above, "main_directory/" would
-  be the directory)
-do to this, you're going to want
-to make a `OliveFile` and write a bit
-in it
+create the base `Olivefile`
 
 ```bash
-$ cd main_directory/
-$ touch Olivefile
-$ vim Olivefile
+$ olive init
 ```
 
-and in the `Olivefile`
+(and in the `Olivefile`)
 
 ```vim
 repos:
    - "trommel/oliver"
-   - "istx25/dotfiles"
+   - "istx25/dotfiles" # add any repo(s)
 
 # use 3 spaces for indentation, not tabs!
-# I spent, like, an hour trying to fix a nonexistant bug becuase of this
+# I spent, like, an hour trying to fix a non-existent bug because of this
 # smh so hard
+# by the way, this is YAML, for anyone interested
+# then again, you could just look at the code and determine that yourself
 ```
 
-you can then run
+### install and/or remove listed repos
 
 ```bash
-$ olive install # installs / removes listed repos
+$ olive install
 ```
 
-### start tracking a repo
+### clone and start tracking a repo
 
 this will add it to the tracking list
 
 ```bash
-$ olive add repo-name/
+$ olive add username/repo
 ```
-### stop tracking a repo
+### remove (move to `.backup`) and stop tracking a repo
 
 this will remove it from the tracking list
 and locally delete the repo
 
 ```bash
-$ olive remove repo-name/
+$ olive remove username/repo
 ```
 
 ### list tracked repos

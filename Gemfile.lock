@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    oliver (0.1.7)
+    oliver (1.5.2.1)
       jibry (>= 0.0.3)
       rainbow (>= 2.0.0)
 
