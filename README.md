@@ -113,7 +113,7 @@ $ olive init
 
 (and in the `Olivefile`)
 
-```vim
+```yaml
 repos:
    - "trommel/oliver"
    - "istx25/dotfiles" # add any repo(s)
