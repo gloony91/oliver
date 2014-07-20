@@ -165,7 +165,7 @@ $ oliver update
 ```
 
 extras
-======
+------
 
 oliver uses [rainbow](https://github.com/sickill/rainbow),
 a sick gem / library for making Terminal all colourful and stuff.
@@ -204,13 +204,13 @@ the gem of the master branch, and that's how it's going to stay.
 -->
 
 ideas
-=====
+-----
 
 refer to
 [IDEAS.md](https://github.com/trommel/oliver/blob/master/spec/IDEAS.md).
 
 versions
-========
+--------
 
 for some reason, I was using things like "1.5" as oliver's
 version for a bit, even though oliver isn't even finished (to
@@ -223,21 +223,29 @@ is 0.1.5, and it will continue to build off from there.
 
 sorry about doing that silly thing.
 
+known bugs
+----------
+
+- for some reason, cloning private
+repos isn't working right now.
+I don't know why. Oliver uses standard
+git, so this shouldn't be an issue.
+
 testing
-=======
+-------
 
 refer to
 [TESTING.md](https://github.com/trommel/oliver/blob/master/spec/TESTING.md).
 
 contribution
-============
+------------
 
 refer to
 [CONTRIBUTING.md](https://github.com/trommel/oliver/blob/master/spec/CONTRIBUTING.md).
 
 
 l3g4l 0bl1g4t10n$
-=================
+------------------
 
 is there even a clear idea to steal?
 
