@@ -33,9 +33,7 @@ if File.file? Name::OLIVER
     run_main
     exit
   else
-    name_install = Rainbow('oliver install').red
-    name_color = Rainbow(Name::OLIVER).red
-    puts "#{name_install} requires an #{name_color} to do its magic."
+    help
     exit
   end
 else
