@@ -25,7 +25,12 @@ prefs:
    - "no colour" # this too :P
 ```
 
-- [ ] [Douglas](https://twitter.com/istx25) gave me this cool
+- [ ] when running `olive list`, list the repos that are currently in the directory against
+the repos that are currently being tracked. repos that are in both (the `Olivefile` and the current directory)
+should be listed as green (using rainbow), and directories that are only found in one of the two options
+will be listed as red.
+
+- [x] [Douglas](https://twitter.com/istx25) gave me this cool
 idea that [CocoaPods](https://github.com/CocoaPods/CocoaPods) uses, where
 you can run
 
