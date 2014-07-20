@@ -181,6 +181,11 @@ things to remember
 - run everything with `olive`, not `oliver`. "oliver" is the name
 of the project, `olive` is the name of the CLI.
 
+- if you want to clone a repo from somewhere other than GitHub (GitHub
+  is defaulted), just use the full git URL instead of the simple
+  `username/repo-name`, for example `git://projects.josh.com/oliver.git`.
+
+<!---
 branches
 ========
 
@@ -196,6 +201,7 @@ anyways, there's an [unstable](https://github.com/trommel/oliver/tree/unstable)
 branch, if you want to check it out.
 the official gem that's hosted on rubygems, though, is
 the gem of the master branch, and that's how it's going to stay.
+-->
 
 ideas
 =====
