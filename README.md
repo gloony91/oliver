@@ -50,21 +50,18 @@ demonstration of this in this repo):
 ```
 main_directory/
   |- git_project_1/
-  |----- src/
   |----- bin/
   |----- lib/
   |----- README.md
   |----- .git/
   |
   |- git_project_2/
-  |----- src/
   |----- bin/
   |----- lib/
   |----- README.md
   |----- .git/
   |
   |- git_project_3/
-  |----- src/
   |----- bin/
   |----- lib/
   |----- README.md
