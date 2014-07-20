@@ -11,17 +11,19 @@ require_relative "oliver/main"
 # if the user doesn't want to use rainbow
 # just disable it completely
 Rainbow.enabled = false if ARGV[-1].downcase == 'colour=off'
-if ARGV[-1].downcase == 'color=off'
-  color = "\"color\""
-  puts "Don't you know how to spell #{Rainbow(color).red}?"
-  exit
-end
 
 # Right off the bat,
 # if the user doesn't specify even one argument
 # just give him some help and quit oliver
 if ARGV[0].nil?
   help
+  exit
+end
+
+# huehuehue
+if ARGV[-1].downcase == 'color=off'
+  color = "\"color\""
+  puts "Don't you know how to spell #{Rainbow(color).red}?"
   exit
 end
 
