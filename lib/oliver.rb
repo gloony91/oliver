@@ -17,7 +17,7 @@ Rainbow.enabled = false if ARGV[-1] == 'colour=off'
 # just give him some help and quit oliver
 if ARGV[0].nil?
   help
-  Jib.exit
+  exit
 end
 
 # (Literally) different arguments
