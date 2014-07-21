@@ -1,14 +1,12 @@
 PATH
   remote: .
   specs:
-    oliver (1.5.2.1)
-      jibry (>= 0.0.3)
+    oliver (1.5.3.7)
       rainbow (>= 2.0.0)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    jibry (0.0.3)
     rainbow (2.0.0)
     rake (10.3.2)
 
