@@ -5,7 +5,7 @@ require 'YAML'
 require_relative "oliver/oliver_file_name"
 require_relative "oliver/arguments"
 require_relative "oliver/version"
-require_relative "oliver/methods"
+require_relative "oliver/help"
 require_relative "oliver/main"
 
 # if the user doesn't want to use rainbow
@@ -28,9 +28,9 @@ other_things
 
 # if `Name::OLIVER` (string)
 # exists as a file continue with oliver
-if File.file? Name::OLIVER
+
   if ARGV[0].downcase == 'install'
-    run_main
+
     exit
   else
     help

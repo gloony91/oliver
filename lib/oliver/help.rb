@@ -56,16 +56,3 @@ def help
   exit
 
 end
-
-# Be totally ready if the user asks
-# a question like "what version is oliver?"
-# or "I need some help"
-def other_things
-  case ARGV[0].downcase
-  when '-v' || '--version'
-    puts "#{Rainbow('oliver').red} #{Rainbow("v#{Oliver::VERSION}").green}"
-    exit
-  when '-h' || '--help'
-   help
-  end
-end

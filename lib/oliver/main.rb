@@ -1,5 +1,6 @@
 # Main oliver file
 def run_main
+  help if !File.file? Name::OLIVER
 
   # Back up your files, man
   if !File.directory?('.backup')

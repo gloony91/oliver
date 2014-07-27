@@ -1,15 +1,10 @@
-def argument?(i)
-  if ARGV[i].nil?
-    help
-    exit
-  end
-end
-
 # Different arguments
 # (Make this into a case statement asap)
 # (It'll be way easier and cleaner to work with later)
 def different_arguments
   case ARGV[0].downcase
+  when 'install'
+    run_main
   when 'init'
     if !File.file?(Name::OLIVER)
       File.open(Name::OLIVER, 'w') do |file|
@@ -26,11 +21,16 @@ def different_arguments
   when 'update'
     puts "pull updates from each tracked repo on the Olivefile"
   when 'add'
-    argument?(1)
     puts "added #{ARGV[1]} to Olivefile"
   when 'remove'
-    argument?(1)
     puts "removed #{ARGV[1]} from Olivefile"
-  end
+  when '-v' || '--version'
+    puts "#{Rainbow('oliver').red} #{Rainbow("v#{Oliver::VERSION}").green}"
+    exit
+  when '-h' || '--help'
+   help
+ else
+   help
+ end
   exit
 end
