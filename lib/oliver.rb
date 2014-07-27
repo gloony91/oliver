@@ -26,17 +26,5 @@ different_arguments
 # (Literally) other things
 other_things
 
-# if `Name::OLIVER` (string)
-# exists as a file continue with oliver
-
-  if ARGV[0].downcase == 'install'
-
-    exit
-  else
-    help
-    exit
-  end
-else
-  help
-  exit
-end
+# just exit
+exit

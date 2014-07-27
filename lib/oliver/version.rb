@@ -1,3 +1,3 @@
 module Oliver
-  VERSION = "1.5.3.9"
+  VERSION = "1.5.4"
 end
