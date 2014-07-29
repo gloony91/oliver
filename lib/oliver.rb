@@ -20,11 +20,8 @@ if ARGV[0].nil?
   exit
 end
 
-# (Literally) different arguments
-different_arguments
+# Arguments
+arguments
 
-# (Literally) other things
-other_things
-
-# just exit
+# just exit at this point
 exit

@@ -125,6 +125,15 @@ repos:
 # then again, you could just look at the code and determine that yourself
 ```
 
+you can also initialize the repo
+with a folder, if you want to skip a couple
+of steps (things surrounded by '[]' means
+that they're optional)
+
+```bash
+$ olive init [--directory] [directory name (defaulted to 'olives')]
+```
+
 ### install and/or remove listed repos
 
 ```bash
