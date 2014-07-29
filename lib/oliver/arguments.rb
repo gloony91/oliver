@@ -1,6 +1,14 @@
-# Require everything in argument_files/
-Dir["oliver/arguments_files/*.rb"].each { |file| require file }
+# Assign 'files' variable to all of the argument files
+# (Make this automatic later on, but for some reason
+# automatic isn't working right now, and I don't
+# know why :P)
+files = %w(add init install list remove update)
+files.each do |file|
+  require_relative "argument_files/#{file}"
+end
 
+# `argument?` returns help if the
+# specified argument is nonexistant
 def argument?(argument_number)
   help if ARGV[argument_number].nil?
 end
