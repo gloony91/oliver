@@ -197,6 +197,9 @@ of the project, `olive` is the name of the CLI.
 branches
 ========
 
+(there may or may not be an unstable branch at the moment.
+I'm constantly adding it and deleting it.)
+
 I kept fixing bugs and then I would frantically
 push the fixes because I was worried people, if anyone actually
 uses oliver, would experience problems with it if I didn't push
