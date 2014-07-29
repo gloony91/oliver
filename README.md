@@ -261,14 +261,11 @@ if you think this is cool
 I hate dropping a link for donations,
 but a dude's gotta eat.
 
-<a href="https://www.gittip.com/trommel/">
-  <img alt="Support via Gittip" src="https://rawgithub.com/twolfson/gittip-badge/0.2.0/dist/gittip.png"/>
-</a>
+[![Support via Gittip](https://rawgithub.com/twolfson/gittip-badge/0.2.0/dist/gittip.png)](https://www.gittip.com/trommel)
 
 
-l3g4l 0bl1g4t10n$
-------------------
+licensing
+---------
 
-is there even a clear idea to steal?
-
-this is my "idea". please don't steal it.
+refer to
+[LICENSE](https://github.com/trommel/oliver/blob/master/spec/LICENSE).
