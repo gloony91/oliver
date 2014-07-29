@@ -185,7 +185,6 @@ of the project, `olive` is the name of the CLI.
   is defaulted), just use the full git URL instead of the simple
   `username/repo-name`, for example `git://projects.josh.com/oliver.git`.
 
-<!---
 branches
 ========
 
@@ -201,7 +200,8 @@ anyways, there's an [unstable](https://github.com/trommel/oliver/tree/unstable)
 branch, if you want to check it out.
 the official gem that's hosted on rubygems, though, is
 the gem of the master branch, and that's how it's going to stay.
--->
+
+also, the unstable branch probably won't work.
 
 ideas
 -----
