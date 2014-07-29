@@ -2,7 +2,7 @@
 # (Make this automatic later on, but for some reason
 # automatic isn't working right now, and I don't
 # know why :P)
-files = %w(add init install list remove update)
+files = %w(add init install list remove update help)
 files.each do |file|
   require_relative "argument_files/#{file}"
 end
@@ -30,9 +30,10 @@ def arguments
     add
   when 'remove'
     remove
+  when 'help'
+    help
   when '-v' || '--version'
     puts "#{Rainbow('oliver').red} #{Rainbow("v#{Oliver::VERSION}").green}"
-  when '-h' || '--help'
    help
  else
    help
