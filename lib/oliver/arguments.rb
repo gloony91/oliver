@@ -1,13 +1,9 @@
+# Require everything in argument_files/
+Dir["oliver/arguments_files/*.rb"].each { |file| require file }
+
 def argument?(argument_number)
   help if ARGV[argument_number].nil?
 end
-
-require_relative 'argument_files/add'
-require_relative 'arguments_files/init'
-require_relative 'arguments_files/install'
-require_relative 'arguments_files/list'
-require_relative 'arguments_files/remove'
-require_relative 'arguments_files/update'
 
 # Different arguments
 # (Make this into a case statement asap)
