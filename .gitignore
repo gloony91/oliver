@@ -18,6 +18,9 @@
 .repl_history
 build/
 
+# I don't want Gemfile.lock
+Gemfile.lock
+
 ## Documentation cache and generated files:
 /.yardoc/
 /_yardoc/
