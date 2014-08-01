@@ -1,58 +1,55 @@
 # Help the user with their heavy troubles
 def help
-
   helper = [
     [
-      "init",
+      'init',
       "initializes the main directory by creating a base #{Name::OLIVER}"
     ],
 
     [
-      "install",
+      'install',
       "clones / removes directories if they're listed on the #{Name::OLIVER}"
     ],
 
     [
-      "add username/repo",
-      "clone repo and add it to the #{Name::OLIVER}",
+      'add username/repo',
+      "clone repo and add it to the #{Name::OLIVER}"
     ],
 
     [
-      "remove username/repo",
-      "delete repo and remove it from the #{Name::OLIVER}",
+      'remove username/repo',
+      "delete repo and remove it from the #{Name::OLIVER}"
     ],
 
     [
-      "list",
+      'list',
       "list repos currently on the #{Name::OLIVER}"
     ],
 
     [
-      "update",
+      'update',
       "pull updates from each tracked repo on the #{Name::OLIVER}"
     ],
 
     [
-      "-v",
-      "return oliver's version"
+      '-h',
+      'return oliver\'s version'
     ],
 
     [
-      "-h",
-      "return this help menu"
+      '-h',
+      'return this help menu'
     ]
   ]
 
   top_message = 'oliver - help / usage'
 
   puts Rainbow(top_message).red
-  (top_message.length + 1).times { print Rainbow("=").yellow }
+  (top_message.length + 1).times { print Rainbow('=').yellow }
   puts
 
   helper.map do |line, blurb|
     puts "#{Rainbow(line).green} # => #{Rainbow(blurb).blue}"
   end
-
   exit
-
 end

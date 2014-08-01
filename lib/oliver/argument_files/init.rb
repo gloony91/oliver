@@ -1,6 +1,5 @@
 def init
-
-  if !ARGV[1].nil?
+  unless ARGV[1].nil?
     if ARGV[2].nil?
       dir_name = 'olives'
     else
@@ -9,7 +8,7 @@ def init
     if ARGV[1].downcase == '--directory'
       Dir.mkdir dir_name
       Dir.chdir(dir_name)
-      random_text = Rainbow("Changed directory").blue
+      random_text = Rainbow('Changed directory').blue
       puts "#{Rainbow(dir_name).green}/ has been created."
       puts "#{random_text} into #{Rainbow(dir_name).green}/."
     end

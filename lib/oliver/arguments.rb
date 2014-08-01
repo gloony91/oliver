@@ -34,9 +34,9 @@ def arguments
     help
   when '-v' || '--version'
     puts "#{Rainbow('oliver').red} #{Rainbow("v#{Oliver::VERSION}").green}"
-   help
+    exit
  else
-   help
+    help
  end
   exit
 end
