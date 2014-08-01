@@ -131,7 +131,7 @@ of steps (things surrounded by '[]' means
 that they're optional)
 
 ```bash
-$ olive init [--directory] [directory name (defaulted to 'olives')]
+$ olive init [-d|--directory] [directory name (defaulted to 'olives')]
 ```
 
 ### install and/or remove listed repos
