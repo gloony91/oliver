@@ -219,7 +219,7 @@ ideas
 -----
 
 refer to
-[IDEAS.md](https://github.com/trommel/oliver/blob/master/spec/IDEAS.md).
+[IDEAS.md](https://github.com/trommel/oliver/blob/master/LICENSE).
 
 versions
 --------
