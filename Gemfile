@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in ramona.gemspec
+# Specify your gem's dependencies in oliver.gemspec
 gemspec
