@@ -48,9 +48,10 @@ Try adding something to the list for the time being."
         `yes | rm -r #{directory_thing}`
         # `mv #{directory_thing} .backup`
       else
-        backup_color = Rainbow('.backup').red
-        repo_color = Rainbow(repo).red
-        puts "There was an error moving #{repo_color}/ to #{backup_color}/"
+        # do nothing at all
+        # backup_color = Rainbow('.backup').red
+        # repo_color = Rainbow(repo).red
+        # puts "There was an error moving #{repo_color}/ to #{backup_color}/"
       end
     end
   end
