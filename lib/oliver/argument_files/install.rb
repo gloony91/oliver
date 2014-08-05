@@ -1,8 +1,8 @@
 def install
 
   # Back up your files, man
-  backup_directory_name = '.backup'
-  Dir.mkdir backup_directory_name unless File.directory? backup_directory_name
+  # backup_directory_name = '.backup'
+  # Dir.mkdir backup_directory_name unless File.directory? backup_directory_name
 
   # Fix this ASAP
   if $final['repos'].nil?
@@ -45,7 +45,8 @@ Try adding something to the list for the time being."
     current_repos.each do |directory_thing|
       if !listed_repos.to_s.include?(directory_thing) &&
                           File.directory?(directory_thing)
-        `mv #{directory_thing} .backup`
+        `yes | rm -r #{directory_thing}`
+        # `mv #{directory_thing} .backup`
       else
         backup_color = Rainbow('.backup').red
         repo_color = Rainbow(repo).red

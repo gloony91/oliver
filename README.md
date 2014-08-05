@@ -220,7 +220,16 @@ branch, if you want to check it out.
 the official gem that's hosted on rubygems, though, is
 the gem of the master branch, and that's how it's going to stay.
 
-also, the unstable branch probably won't work.
+also, the unstable branch probably maybe won't work.
+
+there also might be a "clean" branch, which is basically a (possibly) outdated
+version of oliver that'll backup your directories when you run `olive install`
+(if the repo isn't on the list of repos to track). the master branch
+is now considered "unsafe", meaning that it will simply delete the repo
+if it's not on the list when `olive install` is run.
+
+this is probably maybe a bad idea, but it's a lot easier to maintain.
+if you don't like this, fix it, and make it work properly :)
 
 ideas
 -----
