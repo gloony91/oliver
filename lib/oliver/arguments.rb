@@ -19,16 +19,22 @@ end
 def arguments
   case ARGV[0].downcase
   when 'install'
+    file_manager
     install
   when 'init'
+    file_manager
     init
   when 'list'
+    file_manager
     list
   when 'update'
+    file_manager
     update
   when 'add'
+    file_manager
     add
   when 'remove'
+    file_manager
     remove
   when 'help'
     help
@@ -36,7 +42,7 @@ def arguments
     puts "#{Rainbow('oliver').red} #{Rainbow("v#{Oliver::VERSION}").green}"
     exit
  else
-    help
+    puts "#{Rainbow('Error').underline.red}: Unknown argument: #{ARGV[0]}"
  end
   exit
 end

@@ -1,20 +1,11 @@
 def install
-  unless File.file? Name::OLIVER
-    puts "#{Rainbow('Olivefile').red} does not exist."
-    init
-  end
 
   # Back up your files, man
   backup_directory_name = '.backup'
   Dir.mkdir backup_directory_name unless File.directory? backup_directory_name
 
-  # The buggiest code in the world
-  # (that's probably totally untrue)
-  body = File.read(Name::OLIVER.chomp)
-  final = YAML.load("---\n#{body}\n---")
-
   # Fix this ASAP
-  if final['repos'].nil?
+  if $final['repos'].nil?
     message = "This will normally return a bug, so I'm just not going to do it.
 You have an empty repos list, though, and that's what's causing this bug.
 Try adding something to the list for the time being."
@@ -24,10 +15,10 @@ Try adding something to the list for the time being."
 
   listed_repos = []
 
-  final['repos'].each do |what|
+  $final['repos'].each do |what|
     listed_repos.push(what)
   end
-  final['repos'].each do |url|
+  $final['repos'].each do |url|
 
     # Split the url in half
     splitted = url.split '/'
@@ -56,9 +47,9 @@ Try adding something to the list for the time being."
                           File.directory?(directory_thing)
         `mv #{directory_thing} .backup`
       else
-        backup_color = Rainbow('.backup/').red
+        backup_color = Rainbow('.backup').red
         repo_color = Rainbow(repo).red
-        puts "There was an error moving #{repo_color}/ to #{backup_color}"
+        puts "There was an error moving #{repo_color}/ to #{backup_color}/"
       end
     end
   end
