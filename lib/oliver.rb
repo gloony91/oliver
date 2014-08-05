@@ -2,7 +2,7 @@
 # twss
 require 'rainbow'
 require 'YAML'
-%w(oliver_file_name arguments version main).each do |file|
+%w(oliver_file_name file_manager arguments version main).each do |file|
   require_relative "oliver/#{file}"
 end
 
