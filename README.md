@@ -194,6 +194,13 @@ of the project, `olive` is the name of the CLI.
   is defaulted), just use the full git URL instead of the simple
   `username/repo-name`, for example `git://projects.josh.com/oliver.git`.
 
+- arguments after the actual arguments will be ignored, i.e.:
+
+```bash
+# everything after -d will be ignored
+$ olive init -d hey here are more arguments
+```
+
 branches
 ========
 
