@@ -37,7 +37,7 @@ Try adding something to the list for the time being."
       if username.downcase == 'misc'
         split = repo.split('/')
         if !File.directory?(split[1])
-          `git clone git://github.com/#{repo} --silent`
+          `git clone git://github.com/#{repo} --quiet`
           if File.directory?(split[1])
             puts "#{success} #{split[1]}/ was cloned."
           else
