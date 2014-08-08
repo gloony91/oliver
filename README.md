@@ -4,7 +4,7 @@ oliver
 [![Gem Version](https://badge.fury.io/rb/oliver.svg)](http://badge.fury.io/rb/oliver)
 
 oliver manages your local GitHub
-repositories for you with a simple `Olivefile`.
+repositories for you with a simple `.Olivefile.yml`.
 
 > "like podfiles, but for git repositories"
 -- [@istx25](https://github.com/istx25)
@@ -105,18 +105,20 @@ docs
 
 ### setup the repo
 
-create the base `Olivefile`
+create the base `.Olivefile.yml`
 
 ```bash
 $ olive init
 ```
 
-(and in the `Olivefile`)
+(and in the `.Olivefile.yml`)
 
 ```yaml
+---
 repos:
    - "trommel/oliver"
    - "istx25/dotfiles" # add any repo(s)
+---
 
 # use 3 spaces for indentation, not tabs!
 # I spent, like, an hour trying to fix a non-existent bug because of this
