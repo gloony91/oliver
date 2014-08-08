@@ -15,7 +15,7 @@ def init
   if !File.file?(Name::OLIVER)
     File.open(Name::OLIVER, 'w') do |file|
       file.write("---\nrepos:\n")
-      file.write("\ttrommel:\n\t\t- \"oliver\"\n---\n")
+      file.write("   trommel:\n      - \"oliver\"\n---\n")
       dir_name = '.' if dir_name.nil?
       puts "#{Rainbow(dir_name).green}/#{Rainbow(Name::OLIVER).green} has been created."
     end

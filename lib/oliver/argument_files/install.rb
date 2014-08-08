@@ -1,5 +1,9 @@
 def install
 
+  success = "#{Rainbow('Success').underline.green}:"
+  warning = "#{Rainbow('Warning').underline.yellow}:"
+  error = "#{Rainbow('Error').underline.red}:"
+
   # Fix this ASAP
   if $yaml['repos'].nil?
     message = "This will normally return a bug, so I'm just not going to do it.
@@ -16,23 +20,36 @@ Try adding something to the list for the time being."
     end
   end
 
-  # listed_repos.each do |repo|
-  #   puts repo
-  # end
+  # Map out the username and repos(array)
+  $yaml['repos'].map do |username, repos|
+  	# Assign individual repo from repos array
+  	repos.each do |repo|
+  		if !File.directory?(repo)
+  			`git clone git://github.com/#{username}/#{repo} --quiet`
+  			if File.directory?(repo)
+  				puts "#{success} #{repo}/ has been cloned."
+  			else
+  				puts "#{error} Cloning #{repo}/ failed."
+  			end
+  		else
+  			puts "#{warning} #{repo}/ already exists."
+  		end
+  	end
+  end
 
-  # # If the directory doesn't exist
-  # # in `Name::OLIVER`, delete it
-  # current_repos.each do |directory|
-  #   if !listed_repos.to_s.include?(directory_thing) &&
-  #                       File.directory?(directory_thing)
-  #     `yes | rm -r #{directory_thing}`
-  #     # `mv #{directory_thing} .backup`
-  #   else
-  #     # do nothing at all
-  #     # backup_color = Rainbow('.backup').red
-  #     # repo_color = Rainbow(repo).red
-  #     # puts "There was an error moving #{repo_color}/ to #{backup_color}/"
-  #   end
-  # end
+  # If the directory doesn't exist
+  # in `Name::OLIVER`, delete it
+  # This is an extreme hack
+  current_repos = Dir.entries '.'
+  ['.', '..', '.backup', Name::OLIVER].each do |i|
+    current_repos.delete(i)
+  end
+  current_repos.each do |directory|
+    unless listed_repos.to_s.include?(directory) &&
+                        File.directory?(directory)
+      print "#{warning} Would you like to delete #{directory}/? (y/n) "
+      `yes | rm -r #{directory}` if STDIN.gets.chomp.downcase == 'y'
+    end
+  end
 
 end
