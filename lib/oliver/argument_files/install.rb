@@ -15,6 +15,10 @@ Try adding something to the list for the time being."
 
   listed_repos = []
   $yaml['repos'].map do |username, repos|
+    if repos.nil?
+      puts "#{error} Your repos folder is empty..?"
+      exit
+    end
     repos.each do |repo|
       listed_repos.push(repo)
     end
