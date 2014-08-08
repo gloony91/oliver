@@ -21,10 +21,8 @@ def list
     else
       print Rainbow(repo).red
     end
-    if counter % 4 == 0
-      print "\t"
-    end
-    counter =+ 1
+    print "\t" if counter % 4 == 0
+    counter += 1
   end
   puts
 end

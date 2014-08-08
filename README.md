@@ -122,6 +122,8 @@ repos:
   istx25:
     - "Fluorescent"
     - "dotfiles"
+  misc: # use the misc category for old syntax
+    - "trommel/calkoolator"
 ---
 
 # use 3 spaces for indentation, not tabs! :P
