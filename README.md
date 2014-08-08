@@ -116,11 +116,15 @@ $ olive init
 ```yaml
 ---
 repos:
-   - "trommel/oliver"
-   - "istx25/dotfiles" # add any repo(s)
+  trommel:
+    - "oliver"
+    - "textymous"
+  istx25:
+    - "Fluorescent"
+    - "dotfiles"
 ---
 
-# use 3 spaces for indentation, not tabs!
+# use 3 spaces for indentation, not tabs! :P
 # I spent, like, an hour trying to fix a non-existent bug because of this
 # smh so hard
 # by the way, this is YAML, for anyone interested
