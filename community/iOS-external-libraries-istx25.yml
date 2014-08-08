@@ -1,22 +1,28 @@
 ---
 repos:
+  samvermette:
+    - "UIAlertView-Blocks"
+    - "Montreal-Collective"
+    - "SVSegmentedControl"
+    - "iOS-Simulator-Raindrop"
+    - "RaptureXML"
+    - "emphasize.js"
+    - "objc-geohash"
+    - "SVStatusHUD"
+    gcamp:
+      - "services-to-omnifocus"
+      - "OpenTripPlanner"
+      - "github-omnifocus-sync"
+    TransitApp:
+      - "SVProgressHUD"
+      - "SVHTTPRequest"
+      - "SVWebViewController"
     misc:
      - "stefanceriu/SCSiriWaveformView"
      - "KjulyKYCircleMenu"
      - "chillok/AnimatedCircularCollectionMenu"
      - "YoApp/hey"
      - "opentripplanner/OpenTripPlanner"
-     - "gcamp/services-to-omnifocus"
-     - "gcamp/OpenTripPlanner"
-     - "gcamp/github-omnifocus-sync"
-     - "samvermette/SVStatusHUD"
-     - "samvermette/objc-geohash"
-     - "samvermette/emphasize.js"
-     - "samvermette/RaptureXML"
-     - "samvermette/iOS-Simulator-Raindrop"
-     - "samvermette/SVSegmentedControl"
-     - "samvermette/Montreal-Collective"
-     - "samvermette/UIAlertView-Blocks"
      - "ghvillasboas/CloudKitTest"
      - "lovell/sharp"
      - "davidluzgouveia/ParallaxScrolling"
@@ -29,9 +35,6 @@ repos:
      - "muan/github-gmail"
      - "AgileBits/onepassword-app-extension"
      - "snowshoestamp/python_sdk"
-     - "TransitApp/SVProgressHUD"
-     - "TransitApp/SVHTTPRequest"
-     - "TransitApp/SVWebViewController"
      - "abraham/twitteroauth"
      - "rs/SDWebImage"
      - "maddox/regexkit"
@@ -63,7 +66,4 @@ repos:
      - "koenbok/Framer"
      - "mattdonnelly/Swifter"
      - "cloudapp/api"
-     - "Icon?"
-     - "Icon"
-
 ---
