@@ -169,7 +169,7 @@ $ olive remove username/repo
 list all of the repos that're being tracked
 
 ```bash
-$ oliver list
+$ olive list
 ```
 
 ### update (`git pull`) each repo
@@ -178,7 +178,7 @@ essentially `cd` into each individual
 repo and run `git pull`
 
 ```bash
-$ oliver update
+$ olive update
 ```
 
 extras
