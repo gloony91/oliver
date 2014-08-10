@@ -122,7 +122,7 @@ repos:
   istx25:
     - "Fluorescent"
     - "dotfiles"
-  misc: # use the misc category for old syntax
+  misc: # use the misc category for old syntax. these don't really work, yet
     - "trommel/calkoolator"
 ---
 
