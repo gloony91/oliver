@@ -155,7 +155,7 @@ this will add it to the tracking list
 ```bash
 $ olive add username/repo
 ```
-### remove (move to `.backup`) and stop tracking a repo
+### remove (delete) and stop tracking a repo
 
 this will remove it from the tracking list
 and locally delete the repo
