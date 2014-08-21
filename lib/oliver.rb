@@ -1,10 +1,6 @@
-# holy shit, this is massive
-# twss
-require 'rainbow'
-require 'YAML'
-%w(oliver_file_name file_manager arguments version).each do |file|
-  require_relative "oliver/#{file}"
-end
+# Require files
+%w(rainbow YAML).each { |file| require file }
+require_relative 'oliver/version'
 
 # if the user doesn't want to use rainbow
 # just disable it completely
@@ -12,13 +8,10 @@ Rainbow.enabled = false if ARGV[-1] == 'colour=off'
 
 # if the user doesn't specify even one argument
 # just give him some help and quit oliver
-if ARGV[0].nil?
-  help
-  exit
-end
+help && exit if ARGV[0].nil?
 
 # Arguments
-arguments
+require_relative 'oliver/arguments'
 
-# just exit at this point
+# Just exit at this point
 exit
