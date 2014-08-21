@@ -1,7 +1,7 @@
 # Require files
 %w(rainbow YAML).each { |file| require file }
 require_relative 'oliver/version'
-require_relative 'oliver/argument_files/version'
+require_relative 'oliver/argument_files/help'
 
 # if the user doesn't want to use rainbow
 # just disable it completely
