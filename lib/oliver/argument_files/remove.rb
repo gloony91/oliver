@@ -1,2 +1,2 @@
-argument?(1)
-puts "todo: remove (#{ARGV[1]}) to #{Name::OLIVER}"
+require_relative '../oliver_file_name'
+puts "TODO: remove (#{ARGV[1]}) to #{Name::OLIVER}"

@@ -1,3 +1,4 @@
+require_relative '../oliver_file_name'
 # Make these public later :P
 success = "#{Rainbow('Success').underline.green}:"
 warning = "#{Rainbow('Warning').underline.yellow}:"

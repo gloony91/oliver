@@ -1,1 +1,2 @@
-puts 'todo: pull updates from each tracked repo on the Olivefile'
+require_relative '../oliver_file_name'
+puts "TODO: pull updates from each tracked repo on the #{Name::OLIVER}"

@@ -1,3 +1,4 @@
+require_relative '../oliver_file_name'
 # Help the user with their heavy troubles
 def help
   helper = [

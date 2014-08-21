@@ -1,3 +1,4 @@
+require_relative '../oliver_file_name'
 unless ARGV[1].nil?
   if ARGV[2].nil?
     dir_name = 'olives'
