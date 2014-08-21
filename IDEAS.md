@@ -3,7 +3,7 @@ ideas
 
 ideas that should or have already been implemented.
 
-- [x] make the backup directory hidden (`.backup`)
+- [x] ~~make the backup directory hidden (`.backup`)~~
 
 - [ ] add verbose mode (`--verbose`) so things like `olive install` will have output like
 
@@ -25,7 +25,7 @@ prefs:
    - "no colour" # this too :P
 ```
 
-- [ ] when running `olive list`, list the repos that are currently in the directory against
+- [x] when running `olive list`, list the repos that are currently in the directory against
 the repos that are currently being tracked. repos that are in both (the `Olivefile` and the current directory)
 should be listed as green (using rainbow), and directories that are only found in one of the two options
 will be listed as red.
@@ -47,7 +47,7 @@ remove them from the list and run
 $ olive install
 ```
 
-I spent, like, 50 minutes on this and I can't figure out a good way
-to do it, though, so.. yeah
+~~I spent, like, 50 minutes on this and I can't figure out a good way
+to do it, though, so.. yeah~~
 
-I'll add it as soon as I can figure it out.
+~~I'll add it as soon as I can figure it out.~~
