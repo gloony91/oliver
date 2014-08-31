@@ -1,5 +1,5 @@
-require_relative '../oliver_file_name'
-# Make these public later :P
+# Success, warning and error messages
+# (Make these public, sometime)
 success = "#{Rainbow('Success').underline.green}:"
 warning = "#{Rainbow('Warning').underline.yellow}:"
 error = "#{Rainbow('Error').underline.red}:"
