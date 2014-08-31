@@ -80,11 +80,11 @@ answer to your question is _yes_**.
 
 I have no idea what I'm doing.
 
-the thing that differentiates oliver with
+~~the thing that differentiates oliver with
 typical things (no examples..) is that
 it gives you access to the directory from
 anywhere.. which you could easily do with a public
-shell variable.
+shell variable.~~
 
 > I have no idea what I'm doing.
 
