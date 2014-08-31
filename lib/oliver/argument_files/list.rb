@@ -1,5 +1,9 @@
 counter = 0
 $yaml['repos'].map do |username, repos|
+  if repos.nil?
+    puts "#{Rainbow('Error').red.underline}: Your repos look a little nil."
+    exit
+  end
   repos.each do |repo|
     if File.directory?(repo)
       print Rainbow(repo).green
