@@ -1,5 +1,5 @@
 # The main module for
 # Oliver's version
 module Oliver
-  VERSION = '1.8.5.1'
+  VERSION = '1.8.5.2'
 end
