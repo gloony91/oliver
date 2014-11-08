@@ -33,7 +33,7 @@ def help
     ],
 
     [
-      '-h',
+      '-v',
       'return oliver\'s version'
     ],
 
