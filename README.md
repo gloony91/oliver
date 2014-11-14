@@ -19,6 +19,8 @@ through [RubyGems](https://rubygems.org/gems/oliver)
 $ gem install oliver
 ```
 
+now, [skip the shit in this readme](https://github.com/trommel/oliver#docs)
+
 what the heck
 -------------
 
