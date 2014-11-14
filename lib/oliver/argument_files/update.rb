@@ -1,8 +1,7 @@
 require_relative '../oliver_file_name'
 require 'git'
-# puts "TODO: pull updates from each tracked repo on the #{Name::OLIVER}"
 dirs = Dir.glob('*').select { |f| File.directory? f }
-
+puts 'theoretically this should work but there will be tons of bugs' # enjoy!!
 dirs.each do |dir|
   Dir.chdir(dir)
   g = Git.open(Dir.pwd)
