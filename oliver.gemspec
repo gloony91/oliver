@@ -18,4 +18,5 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'bundler', '~> 1.6'
   gem.add_development_dependency 'rake'
   gem.add_dependency 'rainbow', '>= 2.0.0'
+  gem.add_dependency 'git', '>= 1.2.8'
 end
