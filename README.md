@@ -215,7 +215,8 @@ branches
 ========
 
 (there may or may not be an unstable branch at the moment.
-I'm constantly adding it and deleting it.)
+I'm constantly adding it and deleting it. i won't push gems
+from the unstable branch, only from master.)
 
 I kept fixing bugs and then I would frantically
 push the fixes because I was worried people, if anyone actually
