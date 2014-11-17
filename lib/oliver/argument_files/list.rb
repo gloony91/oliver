@@ -1,5 +1,7 @@
+require_relative '../file_manager'
+
 counter = 0
-$yaml['repos'].map do |username, repos|
+FileManager::YAML['repos'].map do |username, repos|
   if repos.nil?
     puts "#{Rainbow('Error').red.underline}: Your repos look a little nil."
     exit

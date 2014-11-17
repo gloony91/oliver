@@ -1,3 +1,5 @@
+require_relative '../file_manager'
+
 # Success, warning and error messages
 # (Make these public, sometime)
 success = "#{Rainbow('Success').underline.green}:"
@@ -5,7 +7,7 @@ warning = "#{Rainbow('Warning').underline.yellow}:"
 error = "#{Rainbow('Error').underline.red}:"
 
 # Fix this ASAP
-if $yaml['repos'].nil?
+if FileManager::YAML['repos'].nil?
   message = "This will normally return a bug, so I'm just not going to do it.
 You have an empty repos list, though, and that's what's causing this bug.
 Try adding something to the list for the time being."
@@ -17,7 +19,7 @@ end
 listed_repos = []
 
 # Map out the username and repos(array)
-$yaml['repos'].map do |username, repos|
+FileManager::YAML['repos'].map do |username, repos|
   # Exit with error if the username or repos is empty
   if username.nil?
     puts "#{error} Your usernames look a little nil."

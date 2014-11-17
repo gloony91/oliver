@@ -1,5 +1,5 @@
 # Require files
-%w(rainbow YAML).each { |file| require file }
+require 'rainbow'
 require_relative 'oliver/version'
 require_relative 'oliver/argument_files/help'
 

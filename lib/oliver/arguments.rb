@@ -1,7 +1,6 @@
 # Require files
 require_relative 'oliver_file_name'
 require_relative 'argument_files/help'
-require_relative 'file_manager'
 
 def load_file_and_exit(path)
   require_relative path

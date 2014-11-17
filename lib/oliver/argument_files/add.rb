@@ -1,2 +1,3 @@
 require_relative '../oliver_file_name'
-puts "TODO: add (#{ARGV[1]}) to #{Name::OLIVER}"
+add = ARGV[1] || 'nil'
+puts "TODO: add (#{add}) to #{Name::OLIVER}"

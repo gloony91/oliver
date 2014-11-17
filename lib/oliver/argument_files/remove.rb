@@ -1,2 +1,3 @@
 require_relative '../oliver_file_name'
-puts "TODO: remove (#{ARGV[1]}) to #{Name::OLIVER}"
+remove = ARGV[1] || 'nil'
+puts "TODO: remove (#{remove}) to #{Name::OLIVER}"

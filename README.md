@@ -261,6 +261,28 @@ is 0.1.5, and it will continue to build off from there.
 
 sorry about doing that silly thing.
 
+reference (mostly for me but kind of helpful if you don't want to go looking through code shit)
+--------------------------------------------
+
+`FileManager::YAML['repos']` is where you can reference the repos in the `.Olivefile.yml`
+
+you can use this by `require`ing `file_manager.rb` and then using modules and stuff
+
+for example,
+
+```ruby
+require_relative '../file_manager'
+
+FileManager::YAML['repos'].map |username, repos| do
+  puts username
+  repos.each do |repo|
+    puts repo
+  end
+end
+```
+
+etcetera, etcetera
+
 known bugs
 ----------
 
