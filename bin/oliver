@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 require 'rainbow'
 puts Rainbow('Use the "olive" CLI.').red
-puts Rainbow('Run "olive help" for help.').red
+puts Rainbow('Run "olive -h" for help.').red
 puts
 require_relative '../lib/oliver'

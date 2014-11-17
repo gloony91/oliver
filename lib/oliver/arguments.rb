@@ -27,9 +27,9 @@ when 'add'
   require_relative 'argument_files/add'
 when 'remove'
   require_relative 'argument_files/remove'
-when 'help'
+when '-h' || '--help' || 'help'
   help
-when '-v' || '--version'
+when '-v' || '--version' || 'version'
   puts "#{Rainbow('oliver').red} #{Rainbow("v#{Oliver::VERSION}").green}"
   exit
 else
