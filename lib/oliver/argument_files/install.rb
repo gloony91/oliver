@@ -1,4 +1,6 @@
 require_relative '../file_manager'
+require 'fileutils'
+require 'git'
 
 # Success, warning and error messages
 # (Make these public, sometime)
@@ -38,8 +40,9 @@ FileManager::YAML['repos'].map do |username, repos|
     if username.downcase == 'misc'
       split = repo.split('/')
       if !File.directory?(split[1])
-        `git clone git://github.com/#{repo} --quiet`
-        if File.directory?(split[1])
+        repo_replaced = repo.gsub('/', '-')
+        cloned_repo = Git.clone("git://github.com/#{repo}", repo_replaced, :path => '.')
+        if File.directory?(repo_replaced)
           puts "#{success} #{split[1]}/ was cloned."
         else
           puts "#{error} #{split[1]} was not cloned."
@@ -49,7 +52,7 @@ FileManager::YAML['repos'].map do |username, repos|
     end
     if !File.directory?(repo)
       # Clone the repo if the directory doesn't already exist
-      `git clone git://github.com/#{username}/#{repo} --quiet`
+      cloned_repo = Git.clone("git://github.com/#{username}/#{repo}", repo, :path => '.')
 			if File.directory?(repo)
         # If the directory exists after the repo
         # has been cloned, give a success message
@@ -77,6 +80,6 @@ current_repos.each do |directory|
   unless listed_repos.to_s.include?(directory) &&
                       File.directory?(directory)
     print "#{warning} Would you like to delete #{directory}/? (y/n): "
-    `yes | rm -r #{directory}` if STDIN.gets.chomp.downcase == 'y'
+    FileUtils.rm_rf(directory) if STDIN.gets.chomp.downcase == 'y'
   end
 end
