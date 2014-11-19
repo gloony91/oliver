@@ -246,7 +246,7 @@ ideas
 -----
 
 refer to
-[IDEAS.md](https://github.com/trommel/oliver/blob/master/LICENSE).
+[IDEAS.md](https://github.com/trommel/oliver/blob/master/IDEAS).
 
 versions
 --------
