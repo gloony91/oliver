@@ -284,6 +284,20 @@ end
 
 etcetera, etcetera
 
+to do
+-----
+
+there's no checkmarked things right now because i just made this list, please
+don't think i'm some unproductive asshole who does nothing all day or something
+idk 
+
+- [ ] remake the help/info thing to be slimmer and look better
+- [ ] get `add` working
+- [ ] get `remove` working
+- [ ] fix bugs with `update` (tons)
+- [ ] fix bugs with `install` (not as many)
+- [ ] fix bugs with `list` (hardly any, afaik)
+
 known bugs
 ----------
 
