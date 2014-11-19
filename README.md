@@ -195,7 +195,7 @@ append `colour=off` to any statement
 don't forget to spell *"colour"* **the proper way**.
 
 things to remember
-==================
+-----------------
 
 - run everything with `olive`, not `oliver`. "oliver" is the name
 of the project, `olive` is the name of the CLI.
@@ -212,7 +212,7 @@ $ olive init -d hey here are more arguments
 ```
 
 branches
-========
+-------
 
 (there may or may not be an unstable branch at the moment.
 I'm constantly adding it and deleting it. i won't push gems
@@ -289,7 +289,7 @@ to do
 
 there's no checkmarked things right now because i just made this list, please
 don't think i'm some unproductive asshole who does nothing all day or something
-idk 
+idk
 
 - [ ] remake the help/info thing to be slimmer and look better
 - [ ] get `add` working
