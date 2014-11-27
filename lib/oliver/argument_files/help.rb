@@ -9,7 +9,7 @@ def help
 
     [
       'install',
-      "clones / removes directories if they're listed on the #{Name::OLIVER}"
+      "clones/removes repos if they're listed on the #{Name::OLIVER}"
     ],
 
     [
