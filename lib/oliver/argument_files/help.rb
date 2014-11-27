@@ -4,22 +4,22 @@ def help
   helper = [
     [
       'init',
-      "initializes the main directory by creating a base #{Name::OLIVER}"
+      "initializes the main directory by creating a base dotfile"
     ],
 
     [
       'install',
-      "clones/removes repos if they're listed on the #{Name::OLIVER}"
+      "clones/removes repos if they're listed"
     ],
 
     [
       'list',
-      "list repos currently on the #{Name::OLIVER}"
+      "list repos currently on #{Name::OLIVER}"
     ],
 
     [
       'update',
-      "pull updates from each tracked repo on the #{Name::OLIVER}"
+      "pull updates from each tracked repo"
     ],
 
     [
