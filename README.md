@@ -186,13 +186,13 @@ $ olive update
 extras
 ------
 
-oliver uses [rainbow](https://github.com/sickill/rainbow),
-a sick gem / library for making Terminal all colourful and stuff.
+~~oliver uses [rainbow](https://github.com/sickill/rainbow),
+a sick gem / library for making Terminal all colourful and stuff.~~
 
-it's pretty cool, but if you don't like it, just
-append `colour=off` to any statement
+~~it's pretty cool, but if you don't like it, just
+append `colour=off` to any statement~~
 
-don't forget to spell *"colour"* **the proper way**.
+~~don't forget to spell *"colour"* **the proper way**.~~
 
 things to remember
 -----------------
