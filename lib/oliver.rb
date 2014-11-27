@@ -7,7 +7,7 @@ require_relative 'oliver/argument_files/help'
 help && exit if ARGV[0].nil?
 
 # if the user wants to use rainbow
-Rainbow.enabled = false
+Rainbow.enabled = true if ARGV[-1] == 'colour=on'
 
 # Arguments
 require_relative 'oliver/arguments'
