@@ -13,16 +13,6 @@ def help
     ],
 
     [
-      'add username/repo',
-      "clone repo and add it to the #{Name::OLIVER}"
-    ],
-
-    [
-      'remove username/repo',
-      "delete repo and remove it from the #{Name::OLIVER}"
-    ],
-
-    [
       'list',
       "list repos currently on the #{Name::OLIVER}"
     ],

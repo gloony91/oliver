@@ -2,11 +2,6 @@
 require_relative 'oliver_file_name'
 require_relative 'argument_files/help'
 
-def load_file_and_exit(path)
-  require_relative path
-  exit 1
-end
-
 # Default options
 options = {
   :verbose => true,
@@ -23,10 +18,6 @@ when 'list'
   require_relative 'argument_files/list'
 when 'update'
   require_relative 'argument_files/update'
-when 'add'
-  require_relative 'argument_files/add'
-when 'remove'
-  require_relative 'argument_files/remove'
 when '-h' || '--help' || 'help'
   help
 when '-v' || '--version' || 'version'
