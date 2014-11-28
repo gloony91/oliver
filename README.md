@@ -105,6 +105,7 @@ To-Do
 -----
 
 - [ ] Remake the help/info thing to be slimmer & look better
+- [ ] Expand support to any Git, not just GitHub (why didn't I do this earlier?)
 - [ ] Fix bugs with..
     - [ ] `update` (tons)
     - [ ] `install` (not as many)
