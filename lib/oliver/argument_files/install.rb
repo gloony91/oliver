@@ -79,7 +79,7 @@ end
 current_repos.each do |directory|
   unless listed_repos.to_s.include?(directory) &&
                       File.directory?(directory)
-    print "#{warning} Would you like to delete #{directory}/? (y/n): "
-    FileUtils.rm_rf(directory) if STDIN.gets.chomp.downcase == 'y'
+    print "#{warning} Enter #{directory}'s name to delete it: "
+    FileUtils.rm_rf(directory) if STDIN.gets.chomp.downcase == directory
   end
 end

@@ -1,28 +1,42 @@
 # Require files
 require_relative 'oliver_file_name'
-require_relative 'argument_files/help'
+require_relative 'version'
+
+def help
+  require_relative 'argument_files/help'
+end
 
 # Default options
 options = {
-  :verbose => true,
-  :silent  => false,
-  :directory => false
+  :verbose   => true,
+  :silent    => false,
+  :directory => false,
+  :colour    => ARGV[-1] == '--color'
 }
 
-case ARGV[0].downcase
-when 'install'
-  require_relative 'argument_files/install'
-when 'init'
-  require_relative 'argument_files/init'
-when 'list'
-  require_relative 'argument_files/list'
-when 'update'
-  require_relative 'argument_files/update'
-when '-h' || '--help' || 'help'
+# Enable/Disable Rainbow
+Rainbow.enabled = options[:colour]
+
+# Help if user doesn't specify proper arguments
+if ARGV.empty? || (ARGV[0] && ARGV[-1]) == 'colour=on'
   help
-when '-v' || '--version' || 'version'
-  puts "#{Rainbow('oliver').red} #{Rainbow("v#{Oliver::VERSION}").green}"
-  exit
 else
-  puts "#{Rainbow('Error').underline.red}: Unknown argument: #{ARGV[0]}"
+  # Case for arguments
+  case ARGV[0].downcase
+  when 'install'
+    require_relative 'argument_files/install'
+  when 'init'
+    require_relative 'argument_files/init'
+  when 'list'
+    require_relative 'argument_files/list'
+  when 'update'
+    require_relative 'argument_files/update'
+  when '-h' || '--help' || 'help'
+    help
+  when '-v' || '--version' || 'version'
+    puts "#{Rainbow('oliver').red} #{Rainbow("v#{Oliver::VERSION}").green}"
+    exit
+  else
+    puts "#{Rainbow('Error').underline.red}: Unknown argument: #{ARGV[0]}"
+  end
 end
