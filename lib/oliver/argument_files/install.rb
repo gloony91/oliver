@@ -79,7 +79,7 @@ end
 current_repos.each do |directory|
   unless listed_repos.to_s.include?(directory) &&
                       File.directory?(directory)
-    print "#{warning} Enter #{directory}'s name to delete it: "
+    print "#{warning} Enter '#{directory}' to locally delete the repo: "
     FileUtils.rm_rf(directory) if STDIN.gets.chomp.downcase == directory
   end
 end

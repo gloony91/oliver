@@ -110,10 +110,14 @@ To-Do
     - [ ] `install` (not as many)
     - [ ] `list` (hardly any, I think)
 
-##[ideas.md](https://github.com/trommel/oliver/blob/master/IDEAS.md)
+Ideas
+-----
+Refer to [ideas.md](https://github.com/trommel/oliver/blob/master/IDEAS.md).
 
-##[testing.md](https://github.com/trommel/oliver/blob/master/spec/TESTING.md)
+Contribution
+------------
+Refer to [contribution.md](https://github.com/trommel/oliver/blob/master/spec/CONTRIBUTING.md).
 
-##[contribution.md](https://github.com/trommel/oliver/blob/master/spec/CONTRIBUTING.md)
-
-##[LICENSE](https://github.com/trommel/oliver/blob/master/spec/LICENSE)
+Licensing
+---------
+Refer to [LICENSE](https://github.com/trommel/oliver/blob/master/spec/LICENSE).

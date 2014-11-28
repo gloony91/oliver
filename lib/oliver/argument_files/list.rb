@@ -1,6 +1,6 @@
 require_relative '../file_manager'
 
-counter = 0
+# counter = 0
 begin
   FileManager::YAML['repos'].map do |username, repos|
     if repos.nil?
@@ -9,15 +9,20 @@ begin
     end
     repos.each do |repo|
       if File.directory?(repo)
-        print Rainbow(repo).green
+        if Rainbow.enabled
+          puts Rainbow(repo).green
+        else
+          puts Rainbow("+ #{repo}").green
+        end
       else
-        print Rainbow(repo).red
+        if Rainbow.enabled
+          puts Rainbow(repo).red
+        else
+          puts Rainbow("- #{repo}").red
+        end
       end
-      print "\t" if counter % 4 == 0
-      counter += 1
+      # print "\t" if counter % 4 == 0
+      # counter += 1
     end
   end
-  puts
-rescue
-  exit
 end

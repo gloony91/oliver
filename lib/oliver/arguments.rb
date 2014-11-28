@@ -11,18 +11,21 @@ options = {
   :verbose   => true,
   :silent    => false,
   :directory => false,
-  :colour    => ARGV[-1] == '--color'
+  :colour    => ARGV[-1] == 'colour=on'
 }
 
 # Enable/Disable Rainbow
 Rainbow.enabled = options[:colour]
 
 # Help if user doesn't specify proper arguments
-if ARGV.empty? || (ARGV[0] && ARGV[-1]) == 'colour=on'
+if ARGV.empty? || ARGV[0] == 'colour=on'
   help
 else
   # Case for arguments
   case ARGV[0].downcase
+  when 'colour=on'
+    help
+    exit
   when 'install'
     require_relative 'argument_files/install'
   when 'init'
