@@ -1,8 +1,6 @@
 # Require files
 require 'rainbow'
+require_relative 'oliver/settings'
 
 # Arguments
-require_relative 'oliver/arguments'
-
-# Just exit at this point
-exit
+# require_relative 'oliver/arguments'
