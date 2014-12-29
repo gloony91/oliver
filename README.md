@@ -101,10 +101,19 @@ Extras
 oliver uses [rainbow](https://github.com/sickill/rainbow), a gem for colouring the Terminal prompt.
 If you want to use it, just prepend `colour=on` to any olive command.
 
+If you want to enable it by default you can make a `.settings.yml` file in
+your directory and add some settings to it:
+
+```YAML
+---
+colour: "on"
+---
+```
+
 To-Do
 -----
 
-- [ ] Remake the help/info thing to be slimmer & look better
+- [x] Remake the help/info thing to be slimmer & look better
 - [ ] Expand support to any Git, not just GitHub (why didn't I do this earlier?)
 - [ ] Fix bugs with..
     - [ ] `update` (tons)
