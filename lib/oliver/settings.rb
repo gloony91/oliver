@@ -8,8 +8,6 @@ module SettingsManager
   if File.file? settingsName
     body = File.read(settingsName)
     YAML = YAML.load(body)
-    if SettingsManager::YAML["colour"] == 'on'
-      puts 'enabled'
-      Rainbow.enabled = true
-    end
+    Rainbow.enabled = true if SettingsManager::YAML["colour"] == 'on'
+  end
 end

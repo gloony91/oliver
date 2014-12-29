@@ -17,7 +17,8 @@ options = {
 # Enable/Disable Rainbow
 Rainbow.enabled = options[:colour]
 
-require_relative 'oliver/settings'
+# Check .settings.yml
+require_relative 'settings'
 
 # Help if user doesn't specify proper arguments
 if ARGV.empty? || ARGV[0] == 'colour=on'
