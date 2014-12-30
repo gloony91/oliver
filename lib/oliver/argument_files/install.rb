@@ -33,8 +33,10 @@ FileManager::YAML['repos'].map do |username, repos|
   end
 	# Assign individual repo from repos array
 	repos.each do |repo|
+    puts repo
     # Add each repo to the listed_repos array
     repos.each do |repo|
+      puts repo
       listed_repos.push(repo)
     end
     if username.downcase == 'misc'
