@@ -37,9 +37,9 @@ else
     require_relative 'argument_files/list'
   when 'update'
     require_relative 'argument_files/update'
-  when '-h' || '--help' || 'help'
+  when '-h', '--help', 'help'
     help
-  when '-v' || '--version' || 'version'
+  when '-v', '--version', 'version'
     puts "#{Rainbow('oliver').red} #{Rainbow("v#{Oliver::VERSION}").green}"
     exit
   else
