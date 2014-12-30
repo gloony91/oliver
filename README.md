@@ -43,14 +43,15 @@ repos:
     - "Fluorescent"
     - "dotfiles"
   misc:
-    - "trommel/calkoolator"
+    - "git://github.com/trommel/calkoolator"
 ---
 ```
 
 - Remember to use spaces for indentation, not tabs.
 - `Misc` is preferred syntax for use
 when there's only one repo by an author in
-your YAML file.
+your YAML file. With `Misc`, use the full URL
+(for support with non-GitHub repos)
 
 ### Initializing the root
 

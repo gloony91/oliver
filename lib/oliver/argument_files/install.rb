@@ -39,9 +39,14 @@ FileManager::YAML['repos'].map do |username, repos|
     end
     if username.downcase == 'misc'
       split = repo.split('/')
-      if !File.directory?(split[1])
-        repo_replaced = repo.gsub('/', '-')
-        cloned_repo = Git.clone("git://github.com/#{repo}", repo_replaced, :path => '.')
+      last_of_url = split.last
+      if !File.directory?(last_of_url)
+        repo_replaced = last_of_url.gsub('/', '-')
+        cloned_repo = Git.clone(
+                      repo,
+                      repo_replaced,
+                      :path => '.'
+                      )
         if File.directory?(repo_replaced)
           puts "#{success} #{split[1]}/ was cloned."
         else
@@ -52,7 +57,11 @@ FileManager::YAML['repos'].map do |username, repos|
     end
     if !File.directory?(repo)
       # Clone the repo if the directory doesn't already exist
-      cloned_repo = Git.clone("git://github.com/#{username}/#{repo}", repo, :path => '.')
+      cloned_repo = Git.clone("
+                      git://github.com/#{username}/#{repo}",
+                      repo,
+                      :path => '.'
+                      )
 			if File.directory?(repo)
         # If the directory exists after the repo
         # has been cloned, give a success message
