@@ -6,5 +6,6 @@ module FileManager
   else
     puts "#{Rainbow(Name::OLIVER).red} does not exist."
     YAML = nil
+    exit
   end
 end
