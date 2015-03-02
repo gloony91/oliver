@@ -4,10 +4,7 @@ oliver
 [![Gem Version](https://badge.fury.io/rb/oliver.svg)](http://badge.fury.io/rb/oliver)
 
 oliver manages your local GitHub projects
-in a simple YAML file.
-
-> "Like podfiles for Git repos."
--- [@istx25](https://github.com/istx25)
+in a simple YAML file. It's like [CocoaPods](https://github.com/CocoaPods/CocoaPods) for your Git repos.
 
 Installation
 ------------
@@ -15,7 +12,7 @@ Installation
 You can install oliver through [RubyGems](https://rubygems.org/gems/oliver)
 
 ```bash
-$ gem install oliver
+$ gem install oliver -v 1.8.9.5 # new version is buggy, my bad
 ```
 
 Documentation
