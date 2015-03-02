@@ -123,12 +123,12 @@ To-Do
 
 Ideas
 -----
-Refer to [ideas.md](https://github.com/trommel/oliver/blob/master/IDEAS.md).
+Refer to [ideas.md](IDEAS.md).
 
 Contribution
 ------------
-Refer to [contribution.md](https://github.com/trommel/oliver/blob/master/spec/CONTRIBUTING.md).
+Refer to [contribution.md](CONTRIBUTING.md).
 
 Licensing
 ---------
-Refer to [LICENSE](https://github.com/trommel/oliver/blob/master/spec/LICENSE).
+Refer to [LICENSE](LICENSE).

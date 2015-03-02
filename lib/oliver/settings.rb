@@ -1,8 +1,9 @@
+require 'yaml'
+
 # Load .settings.yml to get user settings set to default
 # For example, if the user specifies colour=on, do that by default
 # Make this short and concise if possible
 
-require 'yaml'
 module SettingsManager
   settingsName = '.settings.yml'
   if File.file? settingsName
