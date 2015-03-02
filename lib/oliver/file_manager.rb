@@ -4,7 +4,7 @@ module FileManager
     body = File.read(Name::OLIVER)
     YAML = YAML.load(body)
   else
-    puts "#{Rainbow(Name::OLIVER).red} does not exist."
+    puts "#{Name::OLIVER} does not exist."
     YAML = nil
   end
 end

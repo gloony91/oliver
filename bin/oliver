@@ -1,2 +1,2 @@
 #!/usr/bin/env ruby
-system olive
+puts "Use the 'olive' binary"
