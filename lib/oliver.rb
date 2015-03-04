@@ -1,12 +1,8 @@
 module Oliver
   extend self
 
-  def command(*args)
-  end
-
-  def command?(arg)
-    commands = %w(init install list update version help)
-    commands.include? arg
+  def command
+    @command ||= ''
   end
 
   def run(*args)
@@ -21,19 +17,29 @@ module Oliver
     # Address 'passing through methods' issues (nesting arrays)
     args = args.first
 
+    # Hold commands
+    @command = ''
+
     # Command-line arguments
     options = { :verbose => true, :directory => false }
+
+    # Available commands
+    basicCommands = %w(init install list update version help)
 
     # Option parsing, essentially
     until args.empty?
       case arg = args.shift
       when '--silent' then options[:verbose] = false
       when '--directory' then options[:directory] = true
+      when *basicCommands
+        @command << arg + ' '
       else
         puts "Warning: '#{arg}' not recognized"
+        # exit
       end
     end
 
+    puts @command
     puts options
   end
 
