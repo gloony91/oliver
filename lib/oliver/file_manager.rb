@@ -1,10 +1,10 @@
-require 'yaml'
+require 'json'
 module FileManager
-  if File.file? Name::OLIVER
-    body = File.read(Name::OLIVER)
-    YAML = YAML.load(body)
+  if File.file? Oliver::NAME
+    body = File.read(Oliver::NAME)
+    OLIVER = YAML.load(body)
   else
-    puts "#{Name::OLIVER} does not exist."
+    puts "#{Oliver::NAME} does not exist."
     YAML = nil
   end
 end

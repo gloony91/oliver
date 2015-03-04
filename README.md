@@ -28,7 +28,7 @@ Create the base `.Olivefile.yml`
 ```bash
 $ cd projects
 $ olive init
-$ $EDITOR .Olivefile.yml
+$ $EDITOR .oliver
 ```
 and then add whatever you'd like to the
 YAML file

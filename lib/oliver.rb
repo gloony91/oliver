@@ -1,6 +1,9 @@
 module Oliver
   extend self
 
+  def command(*args)
+  end
+
   def command?(arg)
     commands = %w(init install list update version help)
     commands.include? arg
@@ -19,14 +22,19 @@ module Oliver
     args = args.first
 
     # Command-line arguments
-    options = { :verbose => true } # add more here later
+    options = { :verbose => true, :directory => false }
 
     # Option parsing, essentially
     until args.empty?
       case arg = args.shift
       when '--silent' then options[:verbose] = false
-      else end
+      when '--directory' then options[:directory] = true
+      else
+        puts "Warning: '#{arg}' not recognized"
+      end
     end
+
+    puts options
   end
 
   def advice # since help is a Ruby keyword
