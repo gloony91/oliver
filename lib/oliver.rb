@@ -15,16 +15,18 @@ module Oliver
   end
 
   def process(*args)
+    # Address 'passing through methods' issues (nesting arrays)
+    args = args.first
+
+    # Command-line arguments
     options = { :verbose => true } # add more here later
 
+    # Option parsing, essentially
     until args.empty?
       case arg = args.shift
       when '--silent' then options[:verbose] = false
       else end
     end
-    
-    # this should be evaluating to false if the user adds --silent
-    puts options[:verbose]
   end
 
   def advice # since help is a Ruby keyword
@@ -33,16 +35,11 @@ module Oliver
       :install => "clones/removes repos if they're listed",
       :list => "list user repos",
       :update => "pull updates from each tracked repo",
-      :version => "return Oliver's version",
+      :version => "return the current version",
       :help => "return this help menu"
     }
 
-    mainMessage = "oliver - help/usage"
-    puts mainMessage
-    mainMessage.length.times { print '=' }
-    puts
-    advice.map do |key, value|
-      puts "#{key} # => #{value}"
-    end
+    puts 'usage: olive [command] [arguments]'
+    advice.map { |key, value| puts "#{key}    \t#{value}" }
   end
 end
