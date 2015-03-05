@@ -1,4 +1,5 @@
 require_relative 'oliver/hash'
+require_relative 'oliver/version'
 
 module Oliver
   extend self
@@ -19,7 +20,7 @@ module Oliver
     # Address 'passing through methods' issues (nesting arrays)
     args = args.first
 
-    # Hold commands
+    # Store commands
     @command = ''
 
     # Get strings of keys of commands
@@ -33,6 +34,7 @@ module Oliver
       case arg = args.shift
       when '--silent' then options[:verbose] = false
       when '--directory' then options[:directory] = true
+      when 'version', '--version' then puts "oliver v#{Oliver::VERSION}"
       when *basicCommands
         @command << arg + ' '
       else
@@ -41,6 +43,7 @@ module Oliver
       end
     end
 
+    # debug
     puts @command
     puts options
   end
