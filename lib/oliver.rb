@@ -38,14 +38,11 @@ module Oliver
       when *basicCommands
         @command << arg + ' '
       else
-        puts "Warning: '#{arg}' not recognized"
+        puts "Unknown command: #{arg}"
+        advice
         # exit
       end
     end
-
-    # debug
-    puts @command
-    puts options
   end
 
   def advice(info={}) # since help is a Ruby keyword
