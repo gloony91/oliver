@@ -1,5 +1,3 @@
-# The main module for
-# Oliver's version
 module Oliver
-  VERSION = '1.9.7'
+  VERSION = '0.5'
 end
