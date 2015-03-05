@@ -73,6 +73,10 @@ List all of the repos that are being tracked
 $ olive list
 ```
 
+The + (plus sign) next to the repo shows that it'll be cloned on the next
+`olive install`. The # (pound sign) next to the repo
+means it'll remain unaffected.
+
 ### Update (`git pull`) each repo
 
 Essentially run `git pull` in each
@@ -87,6 +91,7 @@ To-Do
 
 - [x] Remake the help/info thing to be slimmer & look better
 - [ ] Expand support to any Git, not just GitHub
+- [ ] Add support to `olive list` so that it'll list repos that're already cloned but not on the list (so the user knows that it's being removed on the next `olive install`)
 
 Ideas
 -----

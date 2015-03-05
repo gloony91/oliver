@@ -1,5 +1,6 @@
 require 'json'
 require_relative 'file_name'
+require_relative 'file_manager'
 
 # Main commands
 module Oliver
@@ -21,7 +22,18 @@ module Oliver
   end
 
   def list
-    puts "TODO: list"
+    counter = 0
+    FileManager::BODY["repos"].map do |user, repos|
+      repos ||= []
+      unless repos.empty?
+        repos.each do |repo|
+          if File.directory?(repo) then print '+ ' else print '# ' end
+          puts repo
+          print "\t" unless counter % 4 == 0
+          counter += 1
+        end
+      end
+    end
   end
 
   def update

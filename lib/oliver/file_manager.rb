@@ -4,9 +4,9 @@ require 'json'
 module FileManager
   if File.file?(Oliver::NAME)
     body = File.read(Oliver::NAME)
-    CONTENT = JSON.parse(body)
+    BODY = JSON.parse(body)
   else
     puts "#{Oliver::NAME} does not exist."
-    YAML = nil
+    BODY = nil
   end
 end
