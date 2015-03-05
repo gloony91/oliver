@@ -1,4 +1,6 @@
 require 'json'
+require 'git'
+require 'fileutils'
 require_relative 'file_name'
 require_relative 'file_manager'
 
@@ -17,26 +19,56 @@ module Oliver
     end
   end
 
-  def install
-    puts "TODO: install"
-  end
-
-  def list
-    counter = 0
-    FileManager::BODY["repos"].map do |user, repos|
+  def install(options)
+    options = options[:options] # DRY
+    FileManager::BODY['repos'].map do |user, repos|
+      user ||= ''
       repos ||= []
-      unless repos.empty?
+
+      unless user.empty? || repos.nil?
         repos.each do |repo|
-          if File.directory?(repo) then print '+ ' else print '# ' end
-          puts repo
-          print "\t" unless counter % 4 == 0
-          counter += 1
+          if File.directory?(repo)
+            puts "Warning: #{repo}/ already exists"
+          else
+            cloned_repo = Git.clone(
+                  "https://github.com/#{user}/#{repo}",
+                  repo,
+                  :path => '.'
+              )
+            if File.directory?(repo)
+              puts "Success: #{repo}/ has been cloned"
+            else
+              puts "Warning: #{repo}/ failed to clone"
+            end
+          end
         end
       end
     end
   end
 
-  def update
-    puts "TODO: update"
+  def list
+    FileManager::BODY["repos"].map do |user, repos|
+      repos ||= []
+      # Add silent shit later when it's actually working
+      unless repos.empty?
+        repos.each do |repo|
+          if File.directory?(repo) then print '# ' else print '+ ' end # bugs
+          puts repo
+        end
+      end
+    end
+  end
+
+  def update(options)
+    options = options[:options] # DRY, fam :/
+    # Still buggy, afaik
+    dirs = Dir.glob('*').select { |f| File.directory? f }
+    dirs.each do |dir|
+      Dir.chdir(dir)
+      g = Git.open(Dir.pwd)
+      pull = g.pull
+      puts "#{dir}/ has been updated" unless pull.include? 'Already up-to-date'
+      Dir.chdir('..')
+    end
   end
 end

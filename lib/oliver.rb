@@ -75,11 +75,11 @@ module Oliver
     when 'init'
       init(options:@options)
     when 'install'
-      install
+      install(optoins:@options)
     when 'list'
       list
     when 'update'
-      update
+      update(optoins:@options)
     else end
   end
 end
