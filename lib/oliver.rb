@@ -1,8 +1,10 @@
 require_relative 'oliver/hash'
 require_relative 'oliver/version'
+require_relative 'oliver/commands'
 
+# Main Oliver module
 module Oliver
-  extend self
+  module_function
 
   def command
     @command ||= ''
@@ -27,7 +29,7 @@ module Oliver
     basicCommands = advice(silent:true).keys_to_s
 
     # Command-line arguments
-    options = { :verbose => true, :directory => false }
+    options = { verbose: true, directory: false }
 
     # Option parsing, essentially
     until args.empty?
@@ -35,6 +37,7 @@ module Oliver
       when '--silent' then options[:verbose] = false
       when '--directory' then options[:directory] = true
       when 'version', '--version' then puts "oliver v#{Oliver::VERSION}"
+      when 'help', '--help' then assist
       when *basicCommands
         @command << arg + ' '
       else
@@ -43,16 +46,19 @@ module Oliver
         # exit
       end
     end
+
+    # Build the command and do what you must
+    build @command unless @command.empty?
   end
 
   def advice(info={}) # since help is a Ruby keyword
     advice = {
-      :init => "initializes the main directory by creating a base dotfile",
-      :install => "clones/removes repos if they're listed",
-      :list => "list user repos",
-      :update => "pull updates from each tracked repo",
-      :version => "return the current version",
-      :help => "return this help menu"
+      init:    'initializes the main directory by creating a base dotfile',
+      install: 'clones/removes repos if they\'re listed',
+      list:    'list user repos',
+      update:  'pull updates from each tracked repo',
+      version: 'return the current version',
+      help:    'return this help menu'
     }
 
     unless info[:silent]
@@ -60,6 +66,20 @@ module Oliver
       advice.map { |key, value| puts "#{key}    \t#{value}" }
     end
 
-    return advice
+     advice # return advice
+  end
+
+  def build(commands)
+    @command = @command.split(' ')
+    case @command.first
+    when 'init'
+      init
+    when 'install'
+      install
+    when 'list'
+      list
+    when 'update'
+      update
+    else end
   end
 end

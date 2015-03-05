@@ -1,8 +1,10 @@
 require 'json'
+
+# Reads and parses the .olive file
 module FileManager
-  if File.file? Oliver::NAME
+  if File.file?(Oliver::NAME)
     body = File.read(Oliver::NAME)
-    OLIVER = JSON.parse(body)
+    CONTENT = JSON.parse(body)
   else
     puts "#{Oliver::NAME} does not exist."
     YAML = nil
