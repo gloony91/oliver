@@ -1,9 +1,18 @@
+require 'json'
+require_relative 'file_name'
+
 # Main commands
 module Oliver
   module_function
-  
-  def init
-    puts "TODO: init"
+
+  def init(opts)
+    unless File.exists?(Oliver::NAME)
+      File.open(Oliver::NAME, 'w') do |file|
+        tempHash = { repos: { trommel: ["oliver"] } }
+        file.write(JSON.pretty_generate(tempHash))
+        puts "#{Oliver::NAME} created sucessfully" if opts[:options][:verbose]
+      end
+    end
   end
 
   def install

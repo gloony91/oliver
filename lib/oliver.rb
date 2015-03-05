@@ -29,13 +29,13 @@ module Oliver
     basicCommands = advice(silent:true).keys_to_s
 
     # Command-line arguments
-    options = { verbose: true, directory: false }
+    @options = { verbose: true }
 
     # Option parsing, essentially
     until args.empty?
       case arg = args.shift
-      when '--silent' then options[:verbose] = false
-      when '--directory' then options[:directory] = true
+      when '--silent' then @options[:verbose] = false
+      when '--directory' then @options[:directory] = true
       when 'version', '--version' then puts "oliver v#{Oliver::VERSION}"
       when 'help', '--help' then assist
       when *basicCommands
@@ -73,7 +73,7 @@ module Oliver
     @command = @command.split(' ')
     case @command.first
     when 'init'
-      init
+      init(options:@options)
     when 'install'
       install
     when 'list'
