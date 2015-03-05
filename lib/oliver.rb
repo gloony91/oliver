@@ -1,3 +1,5 @@
+require_relative 'oliver/hash.rb'
+
 module Oliver
   extend self
 
@@ -20,11 +22,10 @@ module Oliver
     # Hold commands
     @command = ''
 
+    basicCommands = @advice.keys.to_s
+
     # Command-line arguments
     options = { :verbose => true, :directory => false }
-
-    # Available commands
-    basicCommands = %w(init install list update version help)
 
     # Option parsing, essentially
     until args.empty?
@@ -44,7 +45,7 @@ module Oliver
   end
 
   def advice # since help is a Ruby keyword
-    advice = {
+    @advice = {
       :init => "initializes the main directory by creating a base dotfile",
       :install => "clones/removes repos if they're listed",
       :list => "list user repos",
@@ -54,6 +55,6 @@ module Oliver
     }
 
     puts 'usage: olive [command] [arguments]'
-    advice.map { |key, value| puts "#{key}    \t#{value}" }
+    @advice.map { |key, value| puts "#{key}    \t#{value}" }
   end
 end
