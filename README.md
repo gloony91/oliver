@@ -3,11 +3,8 @@ oliver
 
 [![Gem Version](https://badge.fury.io/rb/oliver.svg)](http://badge.fury.io/rb/oliver)
 
-oliver manages your local GitHub projects
-in a simple YAML file.
-
-> "Like podfiles for Git repos."
--- [@istx25](https://github.com/istx25)
+oliver manages your local GitHub projects in one simple file. It's like
+[CocoaPod's](http://cocoapods.org/) "podfiles", but for your Git repos.
 
 Installation
 ------------
@@ -23,45 +20,44 @@ Documentation
 
 ### Example
 
-Create the base `.Olivefile.yml`
+Create the base `.oliver`
 
 ```bash
 $ cd projects
 $ olive init
 $ $EDITOR .oliver
 ```
-and then add whatever you'd like to the
-YAML file
+and then add whatever you'd like to the file (write in JSON)
 
-```yaml
----
-repos:
-  trommel:
-    - "oliver"
-    - "textymous"
-  istx25:
-    - "Fluorescent"
-    - "dotfiles"
-  misc:
-    - "git://github.com/trommel/calkoolator"
----
+```json
+{
+	"repos": {
+		"trommel": [
+			"oliver",
+			"textymous"
+		],
+		"istx25": [
+			"Fluorescent",
+			"dotfiles"
+		],
+		"misc": [
+			"github/hub"
+		]
+	}
+}
 ```
 
-- Remember to use spaces for indentation, not tabs.
-- `Misc` is preferred syntax for use
-when there's only one repo by an author in
-your YAML file. With `Misc`, use the full URL
-(for support with non-GitHub repos)
+- You can use `Misc` if you only want one repo by a user. You'll also have to use it if you're specifying a repo that's not on GitHub (I'll fix this at some point).
 
 ### Initializing the root
 
 ```bash
-$ olive init [-d|--directory] [directory name (defaulted to 'olives')]
+$ olive init -d [project name]
 ```
 
-### Clones/Remove repos based on YAML file
+### Clones/Remove repos based on `.olive`
 
-Clones repos listed in the YAML file and
+Clones repos listedy and
 removes ones saved locally that aren't found
 in the file
 
@@ -86,49 +82,20 @@ individual repo
 $ olive update
 ```
 
-Notes
------
-
-- Arguments after the actual arguments will be ignored, for example:
-
-```bash
-# everything after "repo_name" will be ignored
-$ olive init -d repo_name here are more arguments
-```
-
-Extras
-------
-
-oliver uses [rainbow](https://github.com/sickill/rainbow), a gem for colouring the Terminal prompt.
-If you want to use it, just prepend `colour=on` to any olive command.
-
-If you want to enable it by default you can make a `.settings.yml` file in
-your directory and add some settings to it:
-
-```YAML
----
-colour: "on"
----
-```
-
 To-Do
 -----
 
 - [x] Remake the help/info thing to be slimmer & look better
-- [ ] Expand support to any Git, not just GitHub (why didn't I do this earlier?)
-- [ ] Fix bugs with..
-    - [ ] `update` (tons)
-    - [ ] `install` (not as many)
-    - [ ] `list` (hardly any, I think)
+- [ ] Expand support to any Git, not just GitHub
 
 Ideas
 -----
-Refer to [ideas.md](https://github.com/trommel/oliver/blob/master/IDEAS.md).
+Refer to [ideas.md](IDEAS.md).
 
 Contribution
 ------------
-Refer to [contribution.md](https://github.com/trommel/oliver/blob/master/spec/CONTRIBUTING.md).
+Refer to [contribution.md](ONTRIBUTING.md).
 
 Licensing
 ---------
-Refer to [LICENSE](https://github.com/trommel/oliver/blob/master/spec/LICENSE).
+Refer to [LICENSE](LICENSE).
