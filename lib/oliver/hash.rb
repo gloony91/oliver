@@ -4,6 +4,7 @@ class Hash
     commands.tr!(':', '')
     commands.tr!('[', '')
     commands.tr!(']', '')
+    puts 'test'
     return commands.split(', ')
   end
 end

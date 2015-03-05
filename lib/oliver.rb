@@ -1,4 +1,4 @@
-require_relative 'oliver/hash.rb'
+require_relative 'oliver/hash'
 
 module Oliver
   extend self
@@ -22,7 +22,8 @@ module Oliver
     # Hold commands
     @command = ''
 
-    basicCommands = @advice.keys.to_s
+    # Get strings of keys of commands
+    basicCommands = advice(silent:true).keys_to_s
 
     # Command-line arguments
     options = { :verbose => true, :directory => false }
@@ -44,8 +45,8 @@ module Oliver
     puts options
   end
 
-  def advice # since help is a Ruby keyword
-    @advice = {
+  def advice(info={}) # since help is a Ruby keyword
+    advice = {
       :init => "initializes the main directory by creating a base dotfile",
       :install => "clones/removes repos if they're listed",
       :list => "list user repos",
@@ -54,7 +55,11 @@ module Oliver
       :help => "return this help menu"
     }
 
-    puts 'usage: olive [command] [arguments]'
-    @advice.map { |key, value| puts "#{key}    \t#{value}" }
+    unless info[:silent]
+      puts 'usage: olive [command] [arguments]'
+      advice.map { |key, value| puts "#{key}    \t#{value}" }
+    end
+
+    return advice
   end
 end
