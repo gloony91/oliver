@@ -1,4 +1,4 @@
 # Oliver's version
 module Oliver
-  VERSION = '0.8.5'
+  VERSION = '2.0'
 end
