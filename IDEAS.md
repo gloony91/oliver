@@ -5,25 +5,7 @@ ideas that should or have already been implemented.
 
 - [x] ~~make the backup directory hidden (`.backup`)~~
 
-- [ ] add verbose mode (`--verbose`) so things like `olive install` will have output like
-
-```bash
-olive/ already exists.
-dotfiles was cloned.
-```
-
-etc, etc. otherwise, this should be defaulted to silent.
-
-this should also be able to be set through the Olivefile
-
-```bash
-repos:
-   - "trommel/oliver"
-
-prefs:
-   - "verbose"
-   - "no colour" # this too :P
-```
+- [x] add silent mode (`--silent`) so commands will hide output
 
 - [x] when running `olive list`, list the repos that are currently in the directory against
 the repos that are currently being tracked. repos that are in both (the `Olivefile` and the current directory)

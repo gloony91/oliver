@@ -3,8 +3,13 @@ oliver
 
 [![Gem Version](https://badge.fury.io/rb/oliver.svg)](http://badge.fury.io/rb/oliver)
 
+<<<<<<< HEAD
 oliver manages your local GitHub projects
 in a simple YAML file. It's like [CocoaPods](https://github.com/CocoaPods/CocoaPods) for your Git repos.
+=======
+oliver manages your local GitHub projects in one simple file. It's like
+[CocoaPod's](http://cocoapods.org/) "podfiles", but for your Git repos.
+>>>>>>> cleanup
 
 Installation
 ------------
@@ -20,45 +25,44 @@ Documentation
 
 ### Example
 
-Create the base `.Olivefile.yml`
+Create the base `.oliver`
 
 ```bash
 $ cd projects
 $ olive init
-$ $EDITOR .Olivefile.yml
+$ $EDITOR .oliver
 ```
-and then add whatever you'd like to the
-YAML file
+and then add whatever you'd like to the file (write in JSON)
 
-```yaml
----
-repos:
-  trommel:
-    - "oliver"
-    - "textymous"
-  istx25:
-    - "Fluorescent"
-    - "dotfiles"
-  misc:
-    - "git://github.com/trommel/calkoolator"
----
+```json
+{
+	"repos": {
+		"trommel": [
+			"oliver",
+			"textymous"
+		],
+		"istx25": [
+			"Fluorescent",
+			"dotfiles"
+		],
+		"misc": [
+			"https://exampleserver.com/repo"
+		]
+	}
+}
 ```
 
-- Remember to use spaces for indentation, not tabs.
-- `Misc` is preferred syntax for use
-when there's only one repo by an author in
-your YAML file. With `Misc`, use the full URL
-(for support with non-GitHub repos)
+- Use `Misc` for URLs that aren't hosted on GitHub
 
 ### Initializing the root
 
 ```bash
-$ olive init [-d|--directory] [directory name (defaulted to 'olives')]
+$ olive init -d [project name]
 ```
 
-### Clones/Remove repos based on YAML file
+### Clones/Remove repos based on `.olive`
 
-Clones repos listed in the YAML file and
+Clones repos listedy and
 removes ones saved locally that aren't found
 in the file
 
@@ -74,6 +78,10 @@ List all of the repos that are being tracked
 $ olive list
 ```
 
+The + (plus sign) next to the repo shows that it'll be cloned on the next
+`olive install`. The # (pound sign) next to the repo
+means it'll remain unaffected.
+
 ### Update (`git pull`) each repo
 
 Essentially run `git pull` in each
@@ -83,40 +91,13 @@ individual repo
 $ olive update
 ```
 
-Notes
------
-
-- Arguments after the actual arguments will be ignored, for example:
-
-```bash
-# everything after "repo_name" will be ignored
-$ olive init -d repo_name here are more arguments
-```
-
-Extras
-------
-
-oliver uses [rainbow](https://github.com/sickill/rainbow), a gem for colouring the Terminal prompt.
-If you want to use it, just prepend `colour=on` to any olive command.
-
-If you want to enable it by default you can make a `.settings.yml` file in
-your directory and add some settings to it:
-
-```YAML
----
-colour: "on"
----
-```
-
 To-Do
 -----
 
 - [x] Remake the help/info thing to be slimmer & look better
-- [ ] Expand support to any Git, not just GitHub (why didn't I do this earlier?)
-- [ ] Fix bugs with..
-    - [ ] `update` (tons)
-    - [ ] `install` (not as many)
-    - [ ] `list` (hardly any, I think)
+- [ ] Expand support to any Git, not just GitHub
+- [ ] Add support to `olive list` so that it'll list repos that're already cloned but not on the list (so the user knows that it's being removed on the next `olive install`)
+- [ ] Clean up the mess that is [`commands.rb`](https://github.com/trommel/oliver/blob/cleanup/lib/oliver/commands.rb)
 
 Ideas
 -----

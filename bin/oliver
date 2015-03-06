@@ -1,5 +1,2 @@
 #!/usr/bin/env ruby
-require 'rainbow'
-puts Rainbow('Use the "olive" CLI, it\'s cleaner.').red
-puts
-require_relative '../lib/oliver'
+puts "Use the 'olive' binary"
