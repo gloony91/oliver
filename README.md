@@ -3,13 +3,8 @@ oliver
 
 [![Gem Version](https://badge.fury.io/rb/oliver.svg)](http://badge.fury.io/rb/oliver)
 
-<<<<<<< HEAD
-oliver manages your local GitHub projects
-in a simple YAML file. It's like [CocoaPods](https://github.com/CocoaPods/CocoaPods) for your Git repos.
-=======
 oliver manages your local GitHub projects in one simple file. It's like
 [CocoaPod's](http://cocoapods.org/) "podfiles", but for your Git repos.
->>>>>>> cleanup
 
 Installation
 ------------
