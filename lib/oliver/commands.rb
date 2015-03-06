@@ -22,7 +22,7 @@ module Oliver
   def install(options)
     options = options[:options] # DRY
     FileManager::BODY['repos'].map do |user, repos|
-      user ||= ''
+      user  ||= ''
       repos ||= []
 
       unless user.empty? || repos.nil?

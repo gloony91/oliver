@@ -1,6 +1,5 @@
 require_relative 'oliver/hash'
 require_relative 'oliver/version'
-require_relative 'oliver/commands'
 
 # Main Oliver module
 module Oliver
@@ -70,6 +69,7 @@ module Oliver
   end
 
   def build(commands)
+    require_relative 'oliver/commands'
     @command = @command.split(' ')
     case @command.first
     when 'init'
