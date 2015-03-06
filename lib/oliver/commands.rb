@@ -19,31 +19,58 @@ module Oliver
     end
   end
 
+  # I'm honestly ashamed of this piece of shit, it's hack as fuck
   def install(options)
     options = options[:options] # DRY
-    FileManager::BODY['repos'].map do |user, repos|
-      user  ||= ''
-      repos ||= []
+    unless FileManager::BODY.nil?
+      FileManager::BODY['repos'].map do |user, repos|
+        user  ||= ''
+        repos ||= []
 
-      unless user.empty? || repos.nil?
-        repos.each do |repo|
-          if File.directory?(repo)
-            puts "Warning: #{repo}/ already exists"
-          else
-            if user.downcase == 'misc'
-              cloned_repo = Git.clone(repo, repo.split('/').last, :path => '.')
+        # Add options[:verbose] support as soon as this doesn't look awful
+        unless user.empty? || repos.nil?
+          repos.each do |repo|
+            if File.directory?(repo)
+              puts "Warning: #{repo}/ already exists"
             else
-              cloned_repo = Git.clone(
-                    "https://github.com/#{user}/#{repo}",
-                    repo,
-                    :path => '.'
-                )
+              if user.downcase == 'misc'
+                cloned_repo = Git.clone(repo, repo.split('/').last, :path => '.')
+              else
+                cloned_repo = Git.clone(
+                      "https://github.com/#{user}/#{repo}",
+                      repo,
+                      :path => '.'
+                  )
+              end
+              if File.directory?(repo) || File.directory?(repo.split('/').last)
+                puts "Success: #{repo}/ has been cloned"
+              else
+                puts "Warning: #{repo}/ failed to clone"
+              end
             end
-            if File.directory?(repo) || File.directory?(repo.split('/').last)
-              puts "Success: #{repo}/ has been cloned"
-            else
-              puts "Warning: #{repo}/ failed to clone"
-            end
+          end
+        end
+      end
+
+      dirRepos = Dir.entries('.').reject do |f|
+        f['.'] || f['..'] || f[Oliver::NAME]
+      end
+      dirRepos.sort!
+
+      trackedRepos = FileManager::BODY['repos'].map do |user, repos|
+        repos.select { |repo| repo }
+      end
+      trackedRepos.sort!
+      trackedRepos = trackedRepos.first
+
+      unless dirRepos == trackedRepos
+        dirRepos ||= []
+        trackedRepos ||= []
+        dirRepos -= trackedRepos
+        unless dirRepos.empty?
+          dirRepos.each do |dirRepo|
+            print "Warning: Enter '#{dirRepo}' to locally delete the repo: "
+            FileUtils.rm_rf(dirRepo) if STDIN.gets.chomp.downcase == dirRepo
           end
         end
       end
