@@ -52,7 +52,7 @@ and then add whatever you'd like to the file (write in JSON)
 ### Initializing the root
 
 ```bash
-$ olive init -d [project name]
+$ olive init
 ```
 
 ### Clones/Remove repos based on `.olive`
@@ -90,7 +90,7 @@ To-Do
 -----
 
 - [x] Remake the help/info thing to be slimmer & look better
-- [ ] Expand support to any Git, not just GitHub
+- [x] Expand repo support to Git in general, not just GitHub
 - [ ] Add support to `olive list` so that it'll list repos that're already cloned but not on the list (so the user knows that it's being removed on the next `olive install`)
 - [ ] Clean up the mess that is [`commands.rb`](https://github.com/trommel/oliver/blob/cleanup/lib/oliver/commands.rb)
 
