@@ -63,6 +63,9 @@ module Oliver
       trackedRepos.sort!
       trackedRepos = trackedRepos.first
 
+      # debug
+      print dirRepos.to_s + ' ' + trackedRepos.to_s
+
       unless dirRepos == trackedRepos
         dirRepos ||= []
         trackedRepos ||= []
