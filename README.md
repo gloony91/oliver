@@ -41,13 +41,13 @@ and then add whatever you'd like to the file (write in JSON)
 			"dotfiles"
 		],
 		"misc": [
-			"github/hub"
+			"https://exampleserver.com/repo"
 		]
 	}
 }
 ```
 
-- You can use `Misc` if you only want one repo by a user. You'll also have to use it if you're specifying a repo that's not on GitHub (I'll fix this at some point).
+- Use `Misc` for URLs that aren't hosted on GitHub
 
 ### Initializing the root
 

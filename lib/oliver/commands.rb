@@ -30,12 +30,16 @@ module Oliver
           if File.directory?(repo)
             puts "Warning: #{repo}/ already exists"
           else
-            cloned_repo = Git.clone(
-                  "https://github.com/#{user}/#{repo}",
-                  repo,
-                  :path => '.'
-              )
-            if File.directory?(repo)
+            if user.downcase == 'misc'
+              cloned_repo = Git.clone(repo, repo.split('/').last, :path => '.')
+            else
+              cloned_repo = Git.clone(
+                    "https://github.com/#{user}/#{repo}",
+                    repo,
+                    :path => '.'
+                )
+            end
+            if File.directory?(repo) || File.directory?(repo.split('/').last)
               puts "Success: #{repo}/ has been cloned"
             else
               puts "Warning: #{repo}/ failed to clone"
@@ -59,9 +63,9 @@ module Oliver
     end
   end
 
+  # Still buggy, afaik
   def update(options)
-    options = options[:options] # DRY, fam :/
-    # Still buggy, afaik
+    options = options[:options] # DRY
     dirs = Dir.glob('*').select { |f| File.directory? f }
     dirs.each do |dir|
       Dir.chdir(dir)
