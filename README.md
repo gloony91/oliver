@@ -12,7 +12,7 @@ Installation
 You can install oliver through [RubyGems](https://rubygems.org/gems/oliver)
 
 ```bash
-$ gem install oliver -v 1.8.9.5 # new version is buggy, my bad
+$ gem install oliver
 ```
 
 Documentation
