@@ -8,20 +8,18 @@ require_relative 'file_manager'
 module Oliver
   module_function
 
-  def init(options)
-    options = options[:options]
+  def init
     unless File.exists?(Oliver::NAME)
       File.open(Oliver::NAME, 'w') do |file|
         tempHash = { repos: { trommel: ["oliver"] } }
         file.write(JSON.pretty_generate(tempHash))
-        puts "#{Oliver::NAME} created sucessfully" if options[:verbose]
+        puts "#{Oliver::NAME} created sucessfully" if @options[:verbose]
       end
     end
   end
 
   # I'm honestly ashamed of this piece of shit, it's hack as fuck
-  def install(options)
-    options = options[:options] # DRY
+  def install
     unless FileManager::BODY.nil?
       FileManager::BODY['repos'].map do |user, repos|
         user  ||= ''
@@ -31,7 +29,7 @@ module Oliver
         unless user.empty? || repos.nil?
           repos.each do |repo|
             if File.directory?(repo)
-              puts "Warning: #{repo}/ already exists"
+              puts "Warning: #{repo}/ already exists" if @options[:verbose]
             else
               if user.downcase == 'misc'
                 cloned_repo = Git.clone(repo, repo.split('/').last, :path => '.')
@@ -42,10 +40,12 @@ module Oliver
                       :path => '.'
                   )
               end
-              if File.directory?(repo) || File.directory?(repo.split('/').last)
-                puts "Success: #{repo}/ has been cloned"
-              else
-                puts "Warning: #{repo}/ failed to clone"
+              if @options[:verbose]
+                if File.directory?(repo) || File.directory?(repo.split('/').last)
+                  puts "Success: #{repo}/ has been cloned"
+                else
+                  puts "Warning: #{repo}/ failed to clone"
+                end
               end
             end
           end
@@ -62,9 +62,6 @@ module Oliver
       end
       trackedRepos.sort!
       trackedRepos = trackedRepos.first
-
-      # debug
-      print dirRepos.to_s + ' ' + trackedRepos.to_s
 
       unless dirRepos == trackedRepos
         dirRepos ||= []
@@ -94,8 +91,7 @@ module Oliver
   end
 
   # Still buggy, afaik
-  def update(options)
-    options = options[:options] # DRY
+  def update
     dirs = Dir.glob('*').select { |f| File.directory? f }
     dirs.each do |dir|
       Dir.chdir(dir)

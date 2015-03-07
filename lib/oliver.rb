@@ -73,13 +73,13 @@ module Oliver
     @command = @command.split(' ')
     case @command.first
     when 'init'
-      init(options:@options)
+      init
     when 'install'
-      install(optoins:@options)
+      install
     when 'list'
       list
     when 'update'
-      update(optoins:@options)
+      update
     else end
   end
 end
