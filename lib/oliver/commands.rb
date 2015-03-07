@@ -68,10 +68,7 @@ module Oliver
         trackedRepos ||= []
         dirRepos -= trackedRepos
         unless dirRepos.empty?
-          dirRepos.each do |dirRepo|
-            print "Warning: Enter '#{dirRepo}' to locally delete the repo: "
-            FileUtils.rm_rf(dirRepo) if STDIN.gets.chomp.downcase == dirRepo
-          end
+          dirRepos.each { |dirRepo| FileUtils.rm_rf(dirRepo) }
         end
       end
     end

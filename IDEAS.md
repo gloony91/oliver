@@ -33,3 +33,8 @@ $ olive install
 to do it, though, so.. yeah~~
 
 ~~I'll add it as soon as I can figure it out.~~
+
+- [ ] when deleting repos check if everything's been pushed and only
+delete without prompting the user first if everything has. if there's still shit
+that hasn't been pushed ask the user and double check if they wanted
+to do all that work for nothin'
