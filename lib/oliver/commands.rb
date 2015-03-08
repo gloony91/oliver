@@ -77,13 +77,15 @@ module Oliver
   end
 
   def list
-    FileManager::BODY.map do |user, repos|
-      repos ||= []
-      # Add silent shit later when it's actually working
-      unless repos.empty?
-        repos.each do |repo|
-          if File.directory?(repo) then print '# ' else print '+ ' end # bugs
-          puts repo
+    unless FileManager::BODY.nil?
+      FileManager::BODY.map do |user, repos|
+        repos ||= []
+        # Add silent shit later when it's actually working
+        unless repos.empty?
+          repos.each do |repo|
+            if File.directory?(repo) then print '# ' else print '+ ' end # bugs
+            puts repo
+          end
         end
       end
     end
