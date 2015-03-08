@@ -42,6 +42,9 @@ and then add whatever you'd like to the file (write in JSON)
 		"Fluorescent",
 		"dotfiles"
 	],
+	"Braeden-Mayer": [
+		"Top-Hat"
+	],
 	"misc": [
 		"https://exampleserver.com/repo"
 	]
