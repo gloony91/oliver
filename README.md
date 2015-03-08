@@ -56,9 +56,6 @@ Creates the base `.oliver` file
 
 ```bash
 $ olive init
-```
-
-```bash
 $ cat .oliver
 ```
 
