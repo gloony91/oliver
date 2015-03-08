@@ -31,19 +31,17 @@ and then add whatever you'd like to the file (write in JSON)
 
 ```json
 {
-	"repos": {
-		"trommel": [
-			"oliver",
-			"textymous"
-		],
-		"istx25": [
-			"Fluorescent",
-			"dotfiles"
-		],
-		"misc": [
-			"https://exampleserver.com/repo"
-		]
-	}
+	"trommel": [
+		"oliver",
+		"textymous"
+	],
+	"istx25": [
+		"Fluorescent",
+		"dotfiles"
+	],
+	"misc": [
+		"https://exampleserver.com/repo"
+	]
 }
 ```
 
