@@ -1,7 +1,10 @@
 oliver
 ======
 
-[![Gem Version](https://badge.fury.io/rb/oliver.svg)](http://badge.fury.io/rb/oliver)
+[![Dependency Status](http://img.shields.io/gemnasium/trommel/oliver.svg)](https://gemnasium.com/trommel/oliver)
+[![Gem Version](http://img.shields.io/gem/v/oliver.svg)](https://rubygems.org/gems/oliver)
+[![License](http://img.shields.io/:license-mit-blue.svg)](http://trommel.mit-license.org)
+
 
 oliver manages your local GitHub projects in one simple file. It's like
 [CocoaPod's](http://cocoapods.org/) "podfiles", but for your Git repos.
