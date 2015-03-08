@@ -56,8 +56,9 @@ module Oliver
       install: 'clones/removes repos if they\'re listed',
       list:    'list user repos',
       update:  'pull updates from each tracked repo',
+      status:  'Pull repo\'s cloning protocol and record location',
       version: 'return the current version',
-      help:    'return this help menu'
+      help:    'return this help menu',
     }
 
     unless info[:silent]
