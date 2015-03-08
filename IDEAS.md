@@ -38,3 +38,14 @@ to do it, though, so.. yeah~~
 delete without prompting the user first if everything has. if there's still shit
 that hasn't been pushed ask the user and double check if they wanted
 to do all that work for nothin'
+
+- [ ] on `olive init` give an argument like `--user`/`--username`/`-u` followed
+by the user's GitHub username for easy initialization. after running
+`olive init -u trommel`, it would create a JSON file like this
+
+```json
+{
+  "trommel": [
+  ]
+}
+```
