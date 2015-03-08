@@ -57,7 +57,8 @@ $ olive init
 
 Clones repos listedy and
 removes ones saved locally that aren't found
-in the file
+in the file. Careful removing directories from the list because
+[Olive will delete them without a second thought](#to-do).
 
 ```bash
 $ olive install
@@ -87,6 +88,9 @@ $ olive update
 To-Do
 -----
 
+- [ ] Add `.settings` file for better customization and easier options usage
+- [ ] In `.settings`, give option to enable a "safe barrier", essentially
+Oliver will prompt you before it removes any directory
 - [x] Remake the help/info thing to be slimmer & look better
 - [x] Expand repo support to Git in general, not just GitHub
 - [ ] Add support to `olive list` so that it'll list repos that're already cloned but not on the list (so the user knows that it's being removed on the next `olive install`)
