@@ -115,11 +115,11 @@ Oliver will prompt you before it removes any directory
 
 Ideas
 -----
-Refer to [ideas.md](IDEAS.md).
+Refer to [IDEAS.md](IDEAS.md).
 
 Contribution
 ------------
-Refer to [contribution.md](CONTRIBUTING.md).
+Refer to [CONTRIBUTING.md](CONTRIBUTING.md).
 
 Licensing
 ---------
