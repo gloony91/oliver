@@ -112,6 +112,7 @@ To-Do
 Oliver will prompt you before it removes any directory
 - [ ] Add support to `olive list` so that it'll list repos that're already cloned but not on the list (so the user knows that it's being removed on the next `olive install`)
 - [ ] Clean up the mess that is [`commands.rb`](https://github.com/trommel/oliver/blob/cleanup/lib/oliver/commands.rb)
+- [ ] Convert the argument parsing to [Clamp](https://github.com/mdub/clamp)
 
 Ideas
 -----
