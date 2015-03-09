@@ -35,7 +35,7 @@ module Oliver
       case arg = args.shift
       when '--silent' then @options[:verbose] = false
       when '--directory' then @options[:directory] = true
-      when 'version', '--version' then puts "oliver v#{Oliver::VERSION}"
+      when 'version', '--version' then puts "oliver v#{Oliver::Version::STRING}"
       when 'help', '--help' then assist
       when *basicCommands
         @command << arg + ' '
