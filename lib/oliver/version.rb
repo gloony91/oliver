@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 module Oliver
   module Version
     MAJOR = 2
