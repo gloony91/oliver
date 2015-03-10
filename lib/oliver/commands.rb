@@ -30,6 +30,7 @@ module Oliver
           repos.each do |repo|
 
             unless File.directory?(repo)
+              puts "Cloning #{repo}/"
               if user.downcase == 'misc'
                 cloned_repo = Git.clone(
                       repo,
