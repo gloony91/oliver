@@ -18,7 +18,7 @@ module Oliver
     end
   end
 
-  # I'm honestly ashamed of this piece of shit, it's hack as fuck
+  # I'm honestly ashamed of this, it's hack as fuck
   def install
     unless FileManager::BODY.nil?
       FileManager::BODY.map do |user, repos|
@@ -31,21 +31,21 @@ module Oliver
 
             unless File.directory?(repo)
               puts "Cloning #{repo}/"
-              if user.downcase == 'misc'
-                cloned_repo = Git.clone(
-                      repo,
-                      repo.split('/').last
-                      )
-              else
-                cloned_repo = Git.clone(
-                      "https://github.com/#{user}/#{repo}",
-                      repo
-                  )
-              end
 
-              if !cloned_repo.nil?
+              begin
+                if user.downcase == 'misc'
+                  cloned_repo = Git.clone(
+                        repo,
+                        repo.split('/').last
+                        )
+                else
+                  cloned_repo = Git.clone(
+                        "https://github.com/#{user}/#{repo}",
+                        repo
+                    )
+                end
                 puts "Success: #{repo}/ has been cloned" if @options[:verbose]
-              else
+              rescue
                 puts "Warning: #{repo}/ failed to clone"
               end
 
@@ -81,13 +81,15 @@ module Oliver
     unless FileManager::BODY.nil?
       FileManager::BODY.map do |user, repos|
         repos ||= []
-        # Add silent shit later when it's actually working
+
         unless repos.empty?
           repos.each do |repo|
-            if File.directory?(repo) then print '# ' else print '+ ' end # bugs
+            # get this working with repos that are going to be uninstalled too
+            if File.directory?(repo) then print '# ' else print '+ ' end
             puts repo
           end
         end
+
       end
     end
   end

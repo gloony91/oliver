@@ -1,5 +1,6 @@
 require_relative 'oliver/hash'
 require_relative 'oliver/version'
+require_relative 'options_manager'
 
 # Main Oliver module
 module Oliver
@@ -36,7 +37,7 @@ module Oliver
       when '--silent' then @options[:verbose] = false
       when '--directory' then @options[:directory] = true
       when 'version', '--version' then puts "oliver v#{Oliver::Version::STRING}"
-      when 'help', '--help' then assist
+      when 'help', '--help' then advice
       when *basicCommands
         @command << arg + ' '
       else
