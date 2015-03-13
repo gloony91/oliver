@@ -93,13 +93,13 @@ The + (plus sign) next to the repo shows that it'll be cloned on the next
 `olive install`. The # (pound sign) next to the repo
 means it'll remain unaffected.
 
-### Update repos
+### Pull/Update repos
 
 Essentially run `git pull` in each
 individual repo
 
 ```bash
-$ olive update
+$ olive pull
 ```
 
 To-Do

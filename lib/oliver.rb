@@ -55,7 +55,7 @@ module Oliver
       init:    'initializes the main directory by creating a base dotfile',
       install: 'clones/removes repos if they\'re listed',
       list:    'list user repos',
-      update:  'pull updates from each tracked repo',
+      pull:    'pull updates from each tracked repo',
       version: 'return the current version',
       help:    'return this help menu',
     }
@@ -78,8 +78,8 @@ module Oliver
       install
     when 'list'
       list
-    when 'update'
-      update
+    when 'pull'
+      pull
     else end
   end
 end

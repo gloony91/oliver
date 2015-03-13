@@ -93,7 +93,7 @@ module Oliver
   end
 
   # Still buggy, afaik
-  def update
+  def pull
     dirs = Dir.glob('*').select { |f| File.directory? f }
     dirs.each do |dir|
       Dir.chdir(dir)
