@@ -97,9 +97,8 @@ module Oliver
     dirs = Dir.glob('*').select { |f| File.directory? f }
     dirs.each do |dir|
       Dir.chdir(dir)
-      g = Git.open(Dir.pwd)
-      pull = g.pull
-      puts "#{dir}/ has been updated" unless pull.include? 'Already up-to-date'
+      `git pull` # Hacks
+      # puts "#{dir}/ has been updated" unless pull.include? 'Already up-to-date'
       Dir.chdir('..')
     end
   end
