@@ -1,6 +1,6 @@
 require_relative 'oliver/hash'
 require_relative 'oliver/version'
-require_relative 'options_manager'
+# require_relative 'oliver/options_manager'
 
 # Main Oliver module
 module Oliver
@@ -30,6 +30,8 @@ module Oliver
 
     # Command-line arguments
     @options = { verbose: true }
+    puts Options::VERBOSE
+    # @options[:verbose] = Options::VERBOSE
 
     # Option parsing, essentially
     until args.empty?
