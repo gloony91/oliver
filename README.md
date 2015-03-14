@@ -100,6 +100,7 @@ individual repo
 
 ```bash
 $ olive pull
+$ olive update # Either work, who cares
 ```
 
 To-Do

@@ -78,7 +78,7 @@ module Oliver
       install
     when 'list'
       list
-    when 'pull'
+    when 'pull', 'update'
       pull
     else end
   end
