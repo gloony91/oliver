@@ -36,7 +36,7 @@ module Oliver
       when '--silent' then @options[:verbose] = false
       when '--directory' then @options[:directory] = true
       when 'version', '--version' then puts "oliver v#{Oliver::Version::STRING}"
-      when 'help', '--help' then assist
+      when 'help', '--help' then advice
       when *basicCommands
         @command << arg + ' '
       else
