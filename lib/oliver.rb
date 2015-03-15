@@ -65,21 +65,17 @@ module Oliver
       advice.map { |key, value| puts "#{key}    \t#{value}" }
     end
 
-     advice # return advice
+     advice # Return advice
   end
 
   def build(commands)
     require_relative 'oliver/commands'
     @command = @command.split(' ')
     case @command.first
-    when 'init'
-      init
-    when 'install'
-      install
-    when 'list'
-      list
-    when 'pull', 'update'
-      pull
+    when 'init' then init
+    when 'install' then install
+    when 'list' then list
+    when 'pull', 'update' then pull
     else end
   end
 end
