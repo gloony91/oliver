@@ -8,10 +8,26 @@ require_relative 'file_manager'
 module Oliver
   module_function
 
+  def get_local_repos
+    temp = []
+    temp = Dir.entries('.').reject do |f|
+      f['.'] || f['..'] || f[Oliver::NAME]
+    end
+    return temp.sort
+  end
+
+  def get_tracked_repos
+    temp = []
+    FileManager::BODY.map do |user, repo|
+      temp << repo
+    end
+    return temp.first.sort
+  end
+
   def init
     unless File.exists?(Oliver::NAME)
       File.open(Oliver::NAME, 'w') do |file|
-        tempHash = { trommel: ["oliver"] }
+        tempHash = { probablyjosh: ["oliver"] }
         file.write(JSON.pretty_generate(tempHash))
         puts "#{Oliver::NAME} created sucessfully" if @options[:verbose]
       end
@@ -54,23 +70,18 @@ module Oliver
         end
       end
 
-      dirRepos = Dir.entries('.').reject do |f|
-        f['.'] || f['..'] || f[Oliver::NAME]
-      end
-      dirRepos.sort!
-
-      trackedRepos ||= []
-      FileManager::BODY.each do |user|
-        user[1].each { |repo| trackedRepos << repo }
-      end
-      trackedRepos.sort!
+      dirRepos = get_local_repos
+      trackedRepos = get_tracked_repos
 
       unless dirRepos == trackedRepos
         dirRepos ||= []
         trackedRepos ||= []
         dirRepos -= trackedRepos
         unless dirRepos.empty?
-          dirRepos.each { |dirRepo| FileUtils.rm_rf(dirRepo) }
+          dirRepos.each do |dirRepo|
+            puts "Removing #{dirRepo}" if @options[:verbose]
+            FileUtils.rm_rf(dirRepo)
+          end
         end
       end
 
@@ -78,17 +89,25 @@ module Oliver
   end
 
   def list
-    unless FileManager::BODY.nil?
-      FileManager::BODY.map do |user, repos|
-        repos ||= []
-        # Add silent shit later when it's actually working
-        unless repos.empty?
-          repos.each do |repo|
-            if File.directory?(repo) then print '# ' else print '+ ' end # bugs
-            puts repo
-          end
-        end
-      end
+    dirRepos = get_local_repos
+    trackedRepos = get_tracked_repos
+
+    # If repo exists in
+    # - .oliver and in directory, print "#" (neutral)
+    # - only .oliver, print "+" (clone)
+    # - only directory, print "-" (remove)
+
+    # If repos and directories are identical, just print # next to repo name
+    dirRepos.each {|repo| puts "# #{repo}" } if dirRepos == trackedRepos
+
+    # If repo only exists in .oliver, print '+'
+    dirRepos.each do |repo|
+      puts "+ #{repo}" unless trackedRepos.include? repo
+    end
+
+    # If repo only exists in directory, print '-'
+    trackedRepos.each do |repo|
+      puts "- #{repo}" unless dirRepos.include? repo
     end
   end
 

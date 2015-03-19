@@ -44,14 +44,9 @@ and then add whatever you'd like to the file (write in JSON)
 	],
 	"Braeden-Mayer": [
 		"Top-Hat"
-	],
-	"misc": [
-		"https://exampleserver.com/repo"
 	]
 }
 ```
-
-- Use `Misc` for URLs that aren't hosted on GitHub
 
 ### Initializing the root
 
