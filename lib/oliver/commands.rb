@@ -21,7 +21,7 @@ module Oliver
     FileManager::BODY.map do |user, repo|
       temp << repo
     end
-    return temp.first.sort
+    return temp.sort.flatten
   end
 
   def init
@@ -97,17 +97,19 @@ module Oliver
     # - only .oliver, print "+" (clone)
     # - only directory, print "-" (remove)
 
-    # If repos and directories are identical, just print # next to repo name
-    dirRepos.each {|repo| puts "# #{repo}" } if dirRepos == trackedRepos
+    # If the repo is in both, print #
+    dirRepos.each do |repo|
+      puts "# #{repo}" if trackedRepos.include? repo
+    end
 
     # If repo only exists in .oliver, print '+'
     dirRepos.each do |repo|
-      puts "+ #{repo}" unless trackedRepos.include? repo
+      puts "- #{repo}" unless trackedRepos.include? repo
     end
 
     # If repo only exists in directory, print '-'
     trackedRepos.each do |repo|
-      puts "- #{repo}" unless dirRepos.include? repo
+      puts "+ #{repo}" unless dirRepos.include? repo
     end
   end
 
