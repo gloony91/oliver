@@ -1,9 +1,9 @@
 oliver
 ======
 
-[![Dependency Status](http://img.shields.io/gemnasium/trommel/oliver.svg)](https://gemnasium.com/trommel/oliver)
+[![Dependency Status](http://img.shields.io/gemnasium/probablyjosh/oliver.svg)](https://gemnasium.com/probablyjosh/oliver)
 [![Gem Version](http://img.shields.io/gem/v/oliver.svg)](https://rubygems.org/gems/oliver)
-[![License](http://img.shields.io/:license-mit-blue.svg)](http://trommel.mit-license.org)
+[![License](http://img.shields.io/:license-mit-blue.svg)](http://probablyjosh.mit-license.org)
 
 
 oliver manages your local GitHub projects in one simple file. It's like
@@ -34,16 +34,14 @@ and then add whatever you'd like to the file (write in JSON)
 
 ```json
 {
-	"trommel": [
+	"probablyjosh": [
 		"oliver",
 		"textymous"
 	],
-	"istx25": [
-		"Fluorescent",
-		"dotfiles"
-	],
-	"Braeden-Mayer": [
-		"Top-Hat"
+	"Intui": [
+		"Bright",
+		"Bright-Backend",
+		"intui.github.io"
 	]
 }
 ```
@@ -59,7 +57,7 @@ $ cat .oliver
 
 ```json
 {
-  "trommel": [
+  "probablyjosh": [
     "oliver"
   ]
 }
@@ -107,7 +105,7 @@ To-Do
 - [ ] In `.settings`, give option to enable a "safe barrier", essentially
 Oliver will prompt you before it removes any directory
 - [ ] Add support to `olive list` so that it'll list repos that're already cloned but not on the list (so the user knows that it's being removed on the next `olive install`)
-- [ ] Clean up the mess that is [`commands.rb`](https://github.com/trommel/oliver/blob/cleanup/lib/oliver/commands.rb)
+- [ ] Clean up the mess that is [`commands.rb`](https://github.com/probablyjosh/oliver/blob/cleanup/lib/oliver/commands.rb)
 - [ ] Convert the argument parsing to [Clamp](https://github.com/mdub/clamp)
 
 Ideas
