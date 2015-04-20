@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.email         = ['joshtrommel@gmail.com']
   gem.description   = 'Local Git(Hub) made easy.'
   gem.summary       = 'Manage your Git(Hub) repos/projects easier.'
-  gem.homepage      = 'https://github.com/trommel/oliver'
+  gem.homepage      = 'https://github.com/probablyjosh/oliver'
   gem.licenses      = ['MIT']
 
   gem.files         = `git ls-files`.split($ORS)
@@ -16,8 +16,9 @@ Gem::Specification.new do |gem|
   gem.require_paths = %w(oliver)
   gem.version       = Oliver::Version::STRING
 
+  gem.add_runtime_dependency 'commander', '~> 4.3.0', '>= 4.3.0'
+  gem.add_dependency 'git', '~> 1.2.9', '>= 1.2.8'
+
   gem.add_development_dependency 'bundler', '~> 1.6'
   gem.add_development_dependency 'rake', '~> 10.4', '>= 10.4.2'
-  gem.add_dependency 'git', '~> 1.2.9', '>= 1.2.8'
-  gem.add_dependency 'json', '~> 1.8.2', '>= 1.8.0'
 end
