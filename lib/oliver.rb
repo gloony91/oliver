@@ -1,4 +1,5 @@
 require_relative 'oliver/version'
+require 'commander/import'
 
 program :name, 'oliver'
 program :version, Oliver::Version::STRING
