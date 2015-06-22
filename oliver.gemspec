@@ -3,7 +3,7 @@ require File.expand_path('../lib/oliver/version', __FILE__)
 
 Gem::Specification.new do |gem|
   gem.authors       = ['Josh Trommel']
-  gem.email         = ['joshtrommel@gmail.com']
+  gem.email         = 'joshtrommel@gmail.com'
   gem.description   = 'Local Git(Hub) made easy.'
   gem.summary       = 'Manage your Git(Hub) repos/projects easier.'
   gem.homepage      = 'https://github.com/trommel/oliver'
