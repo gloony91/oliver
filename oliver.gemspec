@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.email         = 'joshtrommel@gmail.com'
   gem.description   = 'Local Git(Hub) made easy.'
   gem.summary       = 'Manage your Git(Hub) repos/projects easier.'
-  gem.homepage      = 'https://github.com/trommel/oliver'
+  gem.homepage      = 'https://github.com/trmml/oliver'
   gem.licenses      = ['MIT']
 
   gem.files         = `git ls-files`.split($ORS)

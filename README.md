@@ -7,7 +7,7 @@ oliver
 
 
 oliver manages your local GitHub projects in one simple file. It's like
-[CocoaPod's](http://cocoapods.org/) "podfiles", but for your Git repos.
+[CocoaPods'](http://cocoapods.org/) "podfiles", but for your Git repos.
 
 Installation
 ------------
@@ -23,25 +23,28 @@ Documentation
 
 ### Example
 
-Create the base `.oliver`
+Create the base `.oliver` file
 
 ```bash
-$ cd projects
-$ olive init
-$ $EDITOR .oliver
+cd projects/
+olive init
+
+vim .oliver
 ```
-and then add whatever you'd like to the file (write in JSON)
+and then add whatever you'd like to the file. Write in JSON, and format it
+with the username as the key and the repos in an array as the value of the user,
+like so.
 
 ```json
 {
-	"probablyjosh": [
+	"trmml": [
 		"oliver",
 		"textymous"
 	],
-	"Intui": [
-		"Bright",
-		"Bright-Backend",
-		"intui.github.io"
+	"madebybright": [
+		"Nimble",
+		"woke",
+		"madebybright.github.io"
 	]
 }
 ```
@@ -52,12 +55,12 @@ Creates the base `.oliver` file
 
 ```bash
 $ olive init
-$ cat .oliver
+$ less .oliver
 ```
 
 ```json
 {
-  "probablyjosh": [
+  "trmmls": [
     "oliver"
   ]
 }
@@ -65,13 +68,12 @@ $ cat .oliver
 
 ### Clone/Remove repos based on `.olive`
 
-Clones repos listedy and
-removes ones saved locally that aren't found
-in the file. Careful removing directories from the list because
+Clones the listed repos and removes any local repo that isn't
+listed in `.olive`. Be careful removing directories from the list because
 [Olive will delete them without a second thought](#to-do).
 
 ```bash
-$ olive install
+olive install
 ```
 
 ### List tracked repos
@@ -79,21 +81,20 @@ $ olive install
 List all of the repos that are being tracked
 
 ```bash
-$ olive list
+olive list
 ```
 
 The + (plus sign) next to the repo shows that it'll be cloned on the next
 `olive install`. The # (pound sign) next to the repo
-means it'll remain unaffected.
+means it'll remain unaffected. I'm running into some bugs here with oddly
+formatted repo names. Add this to [to-do](#to-do).
 
 ### Pull/Update repos
 
-Essentially run `git pull` in each
-individual repo
+`git pull` each repo.
 
 ```bash
-$ olive pull
-$ olive update # Either work, who cares
+olive pull || olive update # Either work, who cares
 ```
 
 To-Do
