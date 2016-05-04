@@ -4,8 +4,14 @@ module Commands
 	module_function
 
 	def help
-		file = File.read('lib/oliver/commands.json')
-		commands = JSON.parse(file)
+		commands = {
+			init: 'initializes the main directory by creating a base dotfile',
+			install: 'clones/removes repos if they\'re listed',
+			list: 'list user repos',
+			pull: 'pull updates from each tracked repo',
+			version: 'return the current version',
+			help: 'return this help menu',
+		}
 		text = <<-EOS
 Usage:\n
 \t#{'oliver'.colorize(:blue)} <command> [<args>]
