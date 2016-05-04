@@ -14,10 +14,11 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.name          = 'oliver'
   gem.require_paths = %w(oliver)
-  gem.version       = Oliver::Version::STRING
+  gem.version       = Version::VERSION
 
   gem.add_development_dependency 'bundler', '~> 1.6'
   gem.add_development_dependency 'rake', '~> 10.4', '>= 10.4.2'
   gem.add_dependency 'git', '~> 1.2.9', '>= 1.2.8'
   gem.add_dependency 'json', '~> 1.8.2', '>= 1.8.0'
+  gem.add_dependency 'colorize', '~> 0.7.7', '>= 0.7.0'
 end

@@ -1,5 +1,6 @@
 require_relative 'oliver/version'
 require_relative 'oliver/commands.rb'
+require 'colorize'
 
 module Oliver
   module_function
@@ -12,19 +13,21 @@ module Oliver
     if args.empty?
       advice
     else
-      process args
+      process args.shift
     end
   end
 
   def process(*args)
-    until args.empty?
-      case args.shift
-      when 'init' then Commands.init(args)
-      when 'install' then Commands.install(args)
-      when 'list' then Commands.list(args)
-      when 'pull' then Commands.pull(args)
-      when 'help' then Commands.help
-      when 'version' then puts "Oliver #{Version::VERSION}"
+    case arg = args.shift
+    when 'init' then Commands.init(args)
+    when 'install' then Commands.install(args)
+    when 'list' then Commands.list(args)
+    when 'pull' then Commands.pull(args)
+    when 'help' then Commands.help
+    when 'version' then puts "oliver version #{Version::VERSION}".colorize(:green)
+    else
+      puts "oliver: '#{arg}' is not a recognized command.".colorize(:red)
     end
   end
+
 end
