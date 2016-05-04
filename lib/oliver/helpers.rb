@@ -13,6 +13,7 @@ module Helpers
 		when 'success'
 			message.colorize(:green) + text
 		else
+			message.colorize(:blue) + text
 		end
 	end
 end

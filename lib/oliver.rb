@@ -8,10 +8,6 @@ require 'git'
 module Oliver
   module_function
 
-  def command
-    @command ||= ''
-  end
-
   def run(*args)
     if args.empty?
       Commands.help

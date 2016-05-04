@@ -109,14 +109,6 @@ Oliver will prompt you before it removes any directory
 - [ ] Clean up the mess that is [`commands.rb`](https://github.com/probablyjosh/oliver/blob/cleanup/lib/oliver/commands.rb)
 - [ ] Convert the argument parsing to [Clamp](https://github.com/mdub/clamp)
 
-Ideas
------
-Refer to [IDEAS.md](IDEAS.md).
-
-Contribution
-------------
-Refer to [CONTRIBUTING.md](CONTRIBUTING.md).
-
 Licensing
 ---------
-Refer to [LICENSE](LICENSE).
+[MIT](LICENSE).
