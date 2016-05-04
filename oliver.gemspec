@@ -10,7 +10,7 @@ Gem::Specification.new do |gem|
   gem.licenses      = ['MIT']
 
   gem.files         = `git ls-files`.split($ORS)
-  gem.executables   = %w(olive oliver)
+  gem.executables   = %w(oliver)
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.name          = 'oliver'
   gem.require_paths = %w(oliver)

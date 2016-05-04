@@ -27,7 +27,7 @@ Create the base `.oliver` file
 
 ```bash
 cd projects/
-olive init
+oliver init
 
 vim .oliver
 ```
@@ -54,7 +54,7 @@ like so.
 Creates the base `.oliver` file
 
 ```bash
-$ olive init
+$ oliver init
 $ less .oliver
 ```
 
@@ -73,7 +73,7 @@ listed in `.olive`. Be careful removing directories from the list because
 [Olive will delete them without a second thought](#to-do).
 
 ```bash
-olive install
+oliver install
 ```
 
 ### List tracked repos
@@ -81,7 +81,7 @@ olive install
 List all of the repos that are being tracked
 
 ```bash
-olive list
+oliver list
 ```
 
 The + (plus sign) next to the repo shows that it'll be cloned on the next
@@ -94,7 +94,7 @@ formatted repo names. Add this to [to-do](#to-do).
 `git pull` each repo.
 
 ```bash
-olive pull || olive update # Either work, who cares
+oliver pull || olive update # Either work, who cares
 ```
 
 To-Do

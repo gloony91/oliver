@@ -1,5 +1,3 @@
-require 'json'
-
 module Commands
 	module_function
 
@@ -21,7 +19,17 @@ Commands:\n
 		puts text
 	end
 
-	def init; end
+	def init
+		if File.exists?('.oliver')
+			puts '.oliver exists'
+		else
+			File.open('.oliver', 'w') do |f|
+				template = {trmml: ['oliver']}
+				f.write(JSON.pretty_generate(template))
+				puts '.oliver created.'.colorize(:green)
+			end
+		end
+	end
 	def install; end
 	def list; end
 	def pull; end
