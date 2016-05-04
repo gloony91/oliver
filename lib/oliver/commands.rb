@@ -19,7 +19,7 @@ Commands:\n
 		puts text
 	end
 
-	def init
+	def init(args)
 		if File.exists?('.oliver')
 			puts '.oliver exists'
 		else
