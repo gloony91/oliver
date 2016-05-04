@@ -1,7 +1,9 @@
 require_relative 'oliver/version'
-require_relative 'oliver/commands.rb'
+require_relative 'oliver/commands'
+require_relative 'oliver/helpers'
 require 'colorize'
 require 'json'
+require 'git'
 
 module Oliver
   module_function

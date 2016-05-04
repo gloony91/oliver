@@ -21,16 +21,27 @@ Commands:\n
 
 	def init(args)
 		if File.exists?('.oliver')
-			puts '.oliver exists'
+			puts Helpers.log('.oliver exists', 'warning')
 		else
 			File.open('.oliver', 'w') do |f|
 				template = {trmml: ['oliver']}
 				f.write(JSON.pretty_generate(template))
-				puts '.oliver created.'.colorize(:green)
+				puts Helpers.log('.oliver created.', 'success')
 			end
 		end
 	end
+
+	def pull(args)
+		# array with all folders in directory
+		dirs = Dir.glob('*').select { |f| File.directory? f }
+		dirs.each do |dir|
+			g = Git.open(dir)
+			puts Helpers.log("Pulling #{dir}")
+			g.pull
+		end
+		puts Helpers.log('All repos updated successfully', 'success')
+	end
+
 	def install; end
 	def list; end
-	def pull; end
 end
