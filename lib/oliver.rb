@@ -14,7 +14,7 @@ module Oliver
 
   def run(*args)
     if args.empty?
-      advice
+      Commands.help
     else
       process args.shift
     end
