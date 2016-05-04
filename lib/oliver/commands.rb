@@ -4,7 +4,7 @@ module Commands
 	def help
 		commands = {
 			init: 'initializes the main directory by creating a base dotfile',
-			install: 'clones/removes repos if they\'re listed',
+			update: 'clones/removes repos if they\'re listed',
 			list: 'list user repos',
 			pull: 'pull updates from each tracked repo',
 			version: 'return the current version',
@@ -20,11 +20,20 @@ Commands:\n
 	end
 
 	def init(args)
-		if File.exists?('.oliver')
+		template = {}
+		unless args.empty?
+			args.each do |pair|
+				# syntax: oliver init trmml=oliver,site,etc
+				buffer = pair.split('=')
+				username = buffer[0]
+				repos = buffer[1].split(',')
+				template[username] = repos
+			end
+		end
+		if Helpers.oliver_exists?
 			puts Helpers.log('.oliver exists', 'warning')
 		else
 			File.open('.oliver', 'w') do |f|
-				template = {trmml: ['oliver']}
 				f.write(JSON.pretty_generate(template))
 				puts Helpers.log('.oliver created.', 'success')
 			end
@@ -42,6 +51,44 @@ Commands:\n
 		puts Helpers.log('All repos updated successfully', 'success')
 	end
 
-	def install; end
-	def list; end
+	def update(args)
+		if Helpers.oliver_exists?
+			f = File.read('.oliver')
+			file = JSON.parse(f)
+			if file.empty?
+				Helpers.log('.oliver is empty', 'warning')
+			else
+				file.map do |user, repos|
+					repos.each do |repo|
+						url = 'https://github.com/'
+						endpoint = "#{user}/#{repo}"
+						g = Git.clone(url + endpoint, repo, :path => '.')
+						if File.directory?(repo)
+							puts Helpers.log("#{repo} cloned successfully", 'success')
+						else
+							puts Helpers.log("#{repo} was not cloned", 'error')
+						end
+					end
+				end
+			end
+		else
+			Helpers.log('.oliver does not exist', 'warning')
+		end
+	end
+
+	def list(args)
+		if Helpers.oliver_exists?
+			f = File.read('.oliver')
+			file = JSON.parse(f)
+			if file.empty?
+				Helpers.log('.oliver is empty', 'warning')
+			else
+				file.map do |user, repos|
+					repos.each do |repo|
+						puts "#{'*'.colorize(:blue)} #{user}/#{repo}"
+					end
+				end
+			end
+		end
+	end
 end

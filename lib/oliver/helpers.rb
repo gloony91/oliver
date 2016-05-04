@@ -1,6 +1,10 @@
 module Helpers
 	module_function
 
+	def oliver_exists?
+		File.exists?('.oliver')
+	end
+
 	def log(text, priority='normal')
 		message = "==> "
 		case priority

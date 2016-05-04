@@ -5,9 +5,9 @@ oliver
 [![Gem Version](http://img.shields.io/gem/v/oliver.svg)](https://rubygems.org/gems/oliver)
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://probablyjosh.mit-license.org)
 
+oliver keeps track of your git repos in one simple dotfile, making it easy to keep track of the projects you're working on.
 
-oliver manages your local GitHub projects in one simple file. It's like
-[CocoaPods'](http://cocoapods.org/) "podfiles", but for your Git repos.
+> "[CocoaPods](http://cocoapods.org/) for your git repos."
 
 Installation
 ------------
@@ -18,96 +18,70 @@ You can install oliver through [RubyGems](https://rubygems.org/gems/oliver)
 $ gem install oliver
 ```
 
-Documentation
-----
+Syntax
+-------
 
-### Example
-
-Create the base `.oliver` file
-
-```bash
-cd projects/
-oliver init
-
-vim .oliver
-```
-and then add whatever you'd like to the file. Write in JSON, and format it
-with the username as the key and the repos in an array as the value of the user,
-like so.
+Write in JSON, and format `.oliver` with the GitHub username as the key and the repos in an array as the value.
 
 ```json
 {
 	"trmml": [
-		"oliver",
-		"textymous"
+		"oliver", "textymous"
 	],
 	"madebybright": [
-		"Nimble",
-		"woke",
-		"madebybright.github.io"
+		"Nimble", "madebybright.github.io"
 	]
 }
 ```
 
-### Initializing the root
+Documentation
+-------------
 
-Creates the base `.oliver` file
+### `oliver init [username=repos]`
+
+Create an `.oliver` with the optional addition of username(s) and repo(s). The following will create a file with one user (trmml) and three repos belonging to that user (oliver, cameron, wobble)
 
 ```bash
-$ oliver init
-$ less .oliver
+oliver init trmml=oliver,cameron,wobble
+
+less .oliver
 ```
 
 ```json
 {
-  "trmmls": [
+  "trmml": [
+    "textymous",
     "oliver"
+  ],
+  "madebybright": [
+    "nimble"
   ]
 }
 ```
 
-### Clone/Remove repos based on `.olive`
+### `oliver update`
 
-Clones the listed repos and removes any local repo that isn't
-listed in `.olive`. Be careful removing directories from the list because
-[Olive will delete them without a second thought](#to-do).
+Updates the local repos to match `.oliver`. Any repo that exists in `.oliver` that doesn't exist locally will be cloned, and any repo that exists locally but not in `.oliver` will be removed.
 
-```bash
-oliver install
+```
+oliver update # ==> Cloning trmml/oliver
 ```
 
-### List tracked repos
+### `oliver list`
 
-List all of the repos that are being tracked
-
-```bash
-oliver list
-```
-
-The + (plus sign) next to the repo shows that it'll be cloned on the next
-`olive install`. The # (pound sign) next to the repo
-means it'll remain unaffected. I'm running into some bugs here with oddly
-formatted repo names. Add this to [to-do](#to-do).
-
-### Pull/Update repos
-
-`git pull` each repo.
+List all tracked repos.
 
 ```bash
-oliver pull || olive update # Either work, who cares
+oliver list # - oliver, wobble, nimble, raven
 ```
 
-To-Do
------
+### `oliver pull`
 
-- [x] Remake the help/info thing to be slimmer & look better
-- [x] Expand repo support to Git in general, not just GitHub
-- [ ] Add `.settings` file for better customization and easier options usage
-- [ ] In `.settings`, give option to enable a "safe barrier", essentially
-Oliver will prompt you before it removes any directory
-- [ ] Add support to `olive list` so that it'll list repos that're already cloned but not on the list (so the user knows that it's being removed on the next `olive install`)
-- [ ] Clean up the mess that is [`commands.rb`](https://github.com/probablyjosh/oliver/blob/cleanup/lib/oliver/commands.rb)
-- [ ] Convert the argument parsing to [Clamp](https://github.com/mdub/clamp)
+Essentially `git pull` each repo.
+
+```bash
+oliver pull
+```
 
 Licensing
 ---------

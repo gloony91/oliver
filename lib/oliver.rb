@@ -1,6 +1,6 @@
 require_relative 'oliver/version'
-require_relative 'oliver/commands'
 require_relative 'oliver/helpers'
+require_relative 'oliver/commands'
 require 'colorize'
 require 'json'
 require 'git'
@@ -12,14 +12,14 @@ module Oliver
     if args.empty?
       Commands.help
     else
-      process args.shift
+      process args
     end
   end
 
-  def process(*args)
+  def process(args)
     case arg = args.shift
     when 'init' then Commands.init(args)
-    when 'install' then Commands.install(args)
+    when 'update' then Commands.update(args)
     when 'list' then Commands.list(args)
     when 'pull' then Commands.pull(args)
     when 'help' then Commands.help
