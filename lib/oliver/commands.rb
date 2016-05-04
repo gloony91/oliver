@@ -7,12 +7,12 @@ module Commands
 		file = File.read('lib/oliver/commands.json')
 		commands = JSON.parse(file)
 		text = <<-EOS
-		Usage:
-		#{'oliver'.colorize(:blue)} <command> [<args>]
-		Commands:
+Usage:\n
+\t#{'oliver'.colorize(:blue)} <command> [<args>]
+Commands:\n
 		EOS
-		help.map { |key, value| text.push("#{key}\t#{value}") }
-		puts help
+		commands.map { |key, value| text += ("\t#{key}\t#{value}\n") }
+		puts text
 	end
 
 	def init; end
