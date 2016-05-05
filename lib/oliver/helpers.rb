@@ -72,6 +72,14 @@ module Helpers
 			unless tracked_repos.include? repo
 				# remove repo
 				# check w user first!! be like, yo are you sure about this buddy
+				print log("Delete #{repo}? (y/n): ", 'warning')
+				response = STDIN.gets.chomp.downcase
+				if response == 'y'
+					puts log("Deleting #{repo}")
+					FileUtils.rm_rf(repo)
+				else
+					puts log("Keeping #{repo}")
+				end
 			end
 		end
 	end

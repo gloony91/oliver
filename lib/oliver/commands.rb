@@ -52,21 +52,36 @@ Commands:\n
 	end
 
 	def update(args)
+		Helpers.remove
 		Helpers.install
 	end
 
 	def list(args)
-		if Helpers.oliver_exists?
-			f = File.read('.oliver')
-			file = JSON.parse(f)
-			if file.empty?
-				Helpers.log('.oliver is empty', 'warning')
-			else
-				file.map do |user, repos|
-					repos.each do |repo|
-						puts "#{'*'.colorize(:blue)} #{user}/#{repo}"
-					end
+		# check if listed and local (good)
+		# star if listed but not local
+		# x if local but not listed
+		log('.oliver does not exist', 'error') unless Helpers.oliver_exists?
+		log('.oliver is empty', 'error') if Helpers.file.empty?
+
+		Helpers.file.map do |user, repos|
+			repos.each do |repo|
+				# repo is definitely listed at this point
+				if Helpers.local_repos.include? repo
+					emblem = '✓'.colorize(:green)
+				elsif !Helpers.local_repos.include? repo
+					emblem = '*'.colorize(:blue)
 				end
+
+				puts "#{emblem} #{user}/#{repo}"
+			end
+		end
+
+		Helpers.local_repos.each do |repo|
+			# check if local repos are listed
+			# check remotes for fetch and push URL to add user in the future
+			if !Helpers.tracked_repos.include? repo
+				emblem = '✗'.colorize(:red) 
+				puts "#{emblem} #{repo}"
 			end
 		end
 	end

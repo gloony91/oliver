@@ -4,6 +4,7 @@ require_relative 'oliver/commands'
 require 'colorize'
 require 'json'
 require 'git'
+require 'fileutils'
 
 module Oliver
   module_function
