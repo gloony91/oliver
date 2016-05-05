@@ -67,6 +67,12 @@ module Helpers
 	end
 
 	def remove
-		# check local repos and remove them if they're not on the list
+		# check local repos and remove them if they're not in tracked_repos
+		local_repos.each do |repo|
+			unless tracked_repos.include? repo
+				# remove repo
+				# check w user first!! be like, yo are you sure about this buddy
+			end
+		end
 	end
 end
