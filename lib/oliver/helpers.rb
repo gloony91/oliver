@@ -43,6 +43,7 @@ module Helpers
 	end
 
 	def install
+		# install all repos on the list that aren't local
 		log('.oliver does not exist', 'error') unless oliver_exists?
 		log('.oliver is empty', 'error') if file.empty?
 
@@ -51,16 +52,21 @@ module Helpers
 				url = 'https://github.com/'
 				endpoint = "#{user}/#{repo}"
 
-				begin
-					g = Git.clone(url + endpoint, repo, :path => '.')
-				rescue
-					puts log("#{repo} failed to clone", 'warning')
+				if File.directory? repo
+					puts log("#{repo} already exists", 'warning')
+				else
+					begin
+						g = Git.clone(url + endpoint, repo, :path => '.')
+						puts log("#{repo} was cloned successfully", 'success') if File.directory? repo
+					rescue
+						puts log("#{repo} failed to clone", 'warning')
+					end
 				end
-
-				puts log("#{repo} was cloned successfully", 'success') if File.directory? repo
 			end
 		end
 	end
 
-	def remove; end
+	def remove
+		# check local repos and remove them if they're not on the list
+	end
 end
