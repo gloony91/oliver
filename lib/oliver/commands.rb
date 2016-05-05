@@ -52,28 +52,7 @@ Commands:\n
 	end
 
 	def update(args)
-		if Helpers.oliver_exists?
-			f = File.read('.oliver')
-			file = JSON.parse(f)
-			if file.empty?
-				Helpers.log('.oliver is empty', 'warning')
-			else
-				file.map do |user, repos|
-					repos.each do |repo|
-						url = 'https://github.com/'
-						endpoint = "#{user}/#{repo}"
-						g = Git.clone(url + endpoint, repo, :path => '.')
-						if File.directory?(repo)
-							puts Helpers.log("#{repo} cloned successfully", 'success')
-						else
-							puts Helpers.log("#{repo} was not cloned", 'error')
-						end
-					end
-				end
-			end
-		else
-			Helpers.log('.oliver does not exist', 'warning')
-		end
+		Helpers.install
 	end
 
 	def list(args)
