@@ -17,8 +17,8 @@ Gem::Specification.new do |gem|
   gem.version       = Version::VERSION
 
   gem.add_development_dependency 'bundler', '~> 1.6'
-  gem.add_development_dependency 'rake', '~> 10.4', '>= 10.4.2'
-  gem.add_runtime_dependency 'git', '~> 1.3', '>= 1.3.0'
+  gem.add_development_dependency 'rake', '~> 11.1.2', '>= 11.1.0'
+  gem.add_runtime_dependency 'git', '~> 1.3.0', '>= 1.3.0'
   gem.add_runtime_dependency 'json', '~> 1.8', '>= 1.8.3'
   gem.add_runtime_dependency 'colorize', '~> 0.7.7', '>= 0.7.0'
 end
