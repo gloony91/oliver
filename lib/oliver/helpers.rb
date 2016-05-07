@@ -27,10 +27,11 @@ module Helpers
 
 	def log(text, priority=:default)
 		symbol = "==>"
-		symbols = { :default => symbol.colorize(:blue),
-					:warning => symbol.colorize(:yellow),
-					:error => symbol.colorize(:red),
-					:success => symbol.colorize(:green) }
+		symbols = {
+			:default => symbol.colorize(:blue),
+			:warning => symbol.colorize(:yellow),
+			:error => symbol.colorize(:red),
+			:success => symbol.colorize(:green) }
 		return "#{symbols[priority]} #{text}"
 	end
 
