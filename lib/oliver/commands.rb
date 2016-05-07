@@ -31,11 +31,11 @@ Commands:\n
 			end
 		end
 		if Helpers.oliver_exists?
-			puts Helpers.log('.oliver exists', 'warning')
+			puts Helpers.log('.oliver exists', :warning)
 		else
 			File.open('.oliver', 'w') do |f|
 				f.write(JSON.pretty_generate(template))
-				puts Helpers.log('.oliver created.', 'success')
+				puts Helpers.log('.oliver created.', :success)
 			end
 		end
 	end
@@ -48,7 +48,7 @@ Commands:\n
 			puts Helpers.log("Pulling #{dir}")
 			g.pull
 		end
-		puts Helpers.log('All repos updated successfully', 'success')
+		puts Helpers.log('All repos updated successfully', :success)
 	end
 
 	def update(args)
@@ -60,8 +60,8 @@ Commands:\n
 		# check if listed and local (good)
 		# star if listed but not local
 		# x if local but not listed
-		log('.oliver does not exist', 'error') unless Helpers.oliver_exists?
-		log('.oliver is empty', 'error') if Helpers.file.empty?
+		log('.oliver does not exist', :error) unless Helpers.oliver_exists?
+		log('.oliver is empty', :error) if Helpers.file.empty?
 
 		Helpers.file.map do |user, repos|
 			repos.each do |repo|

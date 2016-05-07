@@ -25,27 +25,19 @@ module Helpers
 		File.exists?('.oliver')
 	end
 
-	def log(text, priority='normal')
-		message = "==> "
-		case priority
-		when 'normal'
-			message.colorize(:blue) + text
-		when 'warning'
-			message.colorize(:yellow) + text
-		when 'error'
-			message.colorize(:red) + text
-			exit
-		when 'success'
-			message.colorize(:green) + text
-		else
-			message.colorize(:blue) + text
-		end
+	def log(text, priority=:default)
+		symbol = "==>"
+		symbols = { :default => symbol.colorize(:blue),
+					:warning => symbol.colorize(:yellow),
+					:error => symbol.colorize(:red),
+					:success => symbol.colorize(:green) }
+		return "#{symbols[priority]} #{text}"
 	end
 
 	def install
 		# install all repos on the list that aren't local
-		log('.oliver does not exist', 'error') unless oliver_exists?
-		log('.oliver is empty', 'error') if file.empty?
+		log('.oliver does not exist', :error) unless oliver_exists?
+		log('.oliver is empty', :error) if file.empty?
 
 		file.map do |user, repos|
 			repos.each do |repo|
@@ -53,13 +45,13 @@ module Helpers
 				endpoint = "#{user}/#{repo}"
 
 				if File.directory? repo
-					puts log("#{repo} already exists", 'warning')
+					puts log("#{repo} already exists", :warning)
 				else
 					begin
 						g = Git.clone(url + endpoint, repo, :path => '.')
-						puts log("#{repo} was cloned successfully", 'success') if File.directory? repo
+						puts log("#{repo} was cloned successfully", :success) if File.directory? repo
 					rescue
-						puts log("#{repo} failed to clone", 'warning')
+						puts log("#{repo} failed to clone", :warning)
 					end
 				end
 			end
@@ -72,7 +64,7 @@ module Helpers
 			unless tracked_repos.include? repo
 				# remove repo
 				# check w user first!! be like, yo are you sure about this buddy
-				print log("Delete #{repo}? (y/n): ", 'warning')
+				print log("Delete #{repo}? (y/n): ", :warning)
 				response = STDIN.gets.chomp.downcase
 				if response == 'y'
 					puts log("Deleting #{repo}")
