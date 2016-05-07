@@ -60,8 +60,8 @@ Commands:\n
 		# check if listed and local (good)
 		# star if listed but not local
 		# x if local but not listed
-		log('.oliver does not exist', :error) unless Helpers.oliver_exists?
-		log('.oliver is empty', :error) if Helpers.file.empty?
+		Helpers.log('.oliver does not exist', :error) unless Helpers.oliver_exists?
+		Helpers.log('.oliver is empty', :error) if Helpers.file.empty?
 
 		Helpers.file.map do |user, repos|
 			repos.each do |repo|
