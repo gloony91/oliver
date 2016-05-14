@@ -26,13 +26,13 @@ module Helpers
 	end
 
 	def log(text, priority=:default)
-		symbol = "==>"
-		symbols = {
-			:default => symbol.colorize(:blue),
-			:warning => symbol.colorize(:yellow),
-			:error => symbol.colorize(:red),
-			:success => symbol.colorize(:green) }
-		return "#{symbols[priority]} #{text}"
+		arrow = "==>"
+		legend = {
+			:default => :blue,
+			:warning => :yellow,
+			:error => :red,
+			:success => :green }
+		return "#{arrow.colorize(legend[priority])} #{text}"
 	end
 
 	def install
@@ -46,7 +46,8 @@ module Helpers
 				endpoint = "#{user}/#{repo}"
 
 				if File.directory? repo
-					puts log("#{repo} already exists", :warning)
+					# just be silent because this gets annoying quickly
+					# puts log("#{repo} already exists", :warning)
 				else
 					begin
 						g = Git.clone(url + endpoint, repo, :path => '.')

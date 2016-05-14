@@ -1,10 +1,11 @@
-require_relative 'oliver/version'
-require_relative 'oliver/helpers'
-require_relative 'oliver/commands'
 require 'colorize'
 require 'json'
 require 'git'
 require 'fileutils'
+
+require_relative 'oliver/version'
+require_relative 'oliver/helpers'
+require_relative 'oliver/commands'
 
 module Oliver
   module_function
@@ -17,6 +18,10 @@ module Oliver
     end
   end
 
+  def version
+    "oliver version #{Version::VERSION}".colorize(:green)
+  end
+
   def process(args)
     case arg = args.shift
     when 'init' then Commands.init(args)
@@ -24,7 +29,7 @@ module Oliver
     when 'list' then Commands.list(args)
     when 'pull' then Commands.pull(args)
     when 'help' then Commands.help
-    when 'version' then puts "oliver version #{Version::VERSION}".colorize(:green)
+    when 'version' then puts version
     else
       puts "oliver: '#{arg}' is not a recognized command.".colorize(:red)
     end
