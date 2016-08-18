@@ -42,7 +42,7 @@ Documentation
 Create an `.oliver` with the optional addition of username(s) and repo(s). The following will create a file with one user (trmml) and three repos belonging to that user (oliver, cameron, wobble)
 
 ```bash
-oliver init trmml=oliver,cameron,wobble
+oliver init trmml=oliver,cameron,wobble ravenpoetry=raven
 
 less .oliver
 ```
@@ -50,11 +50,12 @@ less .oliver
 ```json
 {
   "trmml": [
-    "textymous",
-    "oliver"
+    "oliver",
+    "cameron",
+    "wobble"
   ],
-  "madebybright": [
-    "nimble"
+  "ravenpoetry": [
+    "raven"
   ]
 }
 ```
@@ -65,6 +66,7 @@ Updates the local repos to match `.oliver`. Any repo that exists in `.oliver` th
 
 ```
 oliver update # ==> Cloning trmml/oliver
+...
 ```
 
 ### `oliver list`
