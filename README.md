@@ -1,7 +1,6 @@
 oliver
 ======
 
-[![Dependency Status](http://img.shields.io/gemnasium/probablyjosh/oliver.svg)](https://gemnasium.com/probablyjosh/oliver)
 [![Gem Version](http://img.shields.io/gem/v/oliver.svg)](https://rubygems.org/gems/oliver)
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://probablyjosh.mit-license.org)
 
