@@ -84,6 +84,22 @@ Essentially `git pull` each repo.
 oliver pull
 ```
 
-Licensing
+### `oliver add [username/repo]`
+
+Add repo to list.
+
+```bash
+oliver add 'trmml/oliver'
+```
+
+### `oliver remove [username/repo]`
+
+Remove repo from list.
+
+```bash
+oliver remove 'trmml/oliver'
+```
+
+LICENSE
 ---------
 [MIT](LICENSE).

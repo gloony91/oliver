@@ -56,6 +56,56 @@ Commands:\n
 		Helpers.install
 	end
 
+	def add(args)
+		if !Helpers.oliver_exists?
+			puts Helpers.log('.oliver does not exist', :error)
+		else
+			content = Helpers.file
+
+			args.each do |arg|
+				profile = arg.split('/')
+				username = profile[0]
+				repo = profile[1]
+
+				content[username].push(repo)
+
+				File.open('.oliver', 'w') do |f|
+					f.write(JSON.pretty_generate(content))
+					puts Helpers.log("#{repo} added", :success)
+				end
+			end
+
+		end
+	end
+
+	def remove(args)
+		if !Helpers.oliver_exists?
+			puts Helpers.log('.oliver dose not exist', :error)
+		else
+			content = Helpers.file
+
+			args.each do |arg|
+				profile = arg.split('/')
+				username = profile[0]
+				repo = profile[1]
+
+				if content[username].include?(repo)
+					# good
+					index = content[username].index(repo)
+					content[username].delete_at(index)
+
+					File.open('.oliver', 'w') do |f|
+						f.write(JSON.pretty_generate(content))
+						puts Helpers.log("#{repo} removed", :success)
+					end
+				else
+					puts Helpers.log("#{repo} is not listed")
+				end
+			end
+
+		end
+	end
+
 	def list(args)
 		# check if listed and local (good)
 		# star if listed but not local
@@ -80,7 +130,7 @@ Commands:\n
 			# check if local repos are listed
 			# check remotes for fetch and push URL to add user in the future
 			if !Helpers.tracked_repos.include? repo
-				emblem = '✗'.colorize(:red) 
+				emblem = '✗'.colorize(:red)
 				puts "#{emblem} #{repo}"
 			end
 		end

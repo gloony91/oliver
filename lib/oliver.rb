@@ -28,6 +28,8 @@ module Oliver
     when 'update' then Commands.update(args)
     when 'list' then Commands.list(args)
     when 'pull' then Commands.pull(args)
+    when 'add' then Commands.add(args)
+    when 'remove' then Commands.remove(args)
     when 'help' then Commands.help
     when 'version' then puts version
     else
