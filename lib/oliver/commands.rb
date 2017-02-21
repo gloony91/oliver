@@ -67,7 +67,12 @@ Commands:\n
 				username = profile[0]
 				repo = profile[1]
 
-				content[username].push(repo)
+				begin
+					content[username].push(repo)
+				rescue
+					content[username] = []
+					content[username].push(repo)
+				end
 
 				File.open('.oliver', 'w') do |f|
 					f.write(JSON.pretty_generate(content))
