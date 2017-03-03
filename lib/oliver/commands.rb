@@ -44,11 +44,14 @@ Commands:\n
 		# array with all folders in directory
 		dirs = Dir.glob('*').select { |f| File.directory? f }
 		dirs.each do |dir|
-			g = Git.open(dir)
-			puts Helpers.log("Pulling #{dir}")
-			g.pull
+			begin
+				g = Git.open(dir)
+				g.pull
+				puts Helpers.log("Pulled #{dir} successfully")
+			rescue
+				puts Helpers.log("Failed to pull #{dir}", :error)
+			end
 		end
-		puts Helpers.log('All repos updated successfully', :success)
 	end
 
 	def update(args)
